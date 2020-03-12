@@ -1,23 +1,26 @@
 <html>
 
 <body>
+    <input type="date">
     <h1>我叫胡金雅</h1>
     <p>我的学号是<span id="studentnumber">19002090210</span></p>
     <!-- <img src="picture_01.jpg" id="logo" alt="这是一张图片" /> -->
     <script src="jquery.min.js.js"></script>
-<script src="jssor.slider.min.js"></script>
-<script>
-    jQuery(document).ready(function ($) {
-        var options = { $AutoPlay: 1 };
-        var jssor1_slider = new $JssorSlider$("jssor_1", options);
-    });
-</script>
-<div id="jssor_1" style="position:relative;top:0px;left:0px;width:380px;height:380px;overflow:hidden;">
-    <div data-u="slides" style="position:absolute;top:0px;left:0px;width:380px;height:380px;overflow:hidden;">
-        <div><img data-u="image" src="crayonShinChan_01.jpg" /></div>
-        <div><img data-u="image" src="crayonShinChan_02.jpg" /></div>
+    <script src="jssor.slider.min.js"></script>
+    <link href="my.css" rel="stylesheet" type="text/css" />
+    <script>
+        jQuery(document).ready(function ($) {
+            var options = { $AutoPlay: 1 };
+            var jssor1_slider = new $JssorSlider$("jssor_1", options);
+        });
+    </script>
+
+    <div id="jssor_1">
+        <div data-u="slides" style="position:absolute;top:0px;left:0px;width:380px;height:380px;overflow:hidden;">
+            <div><img data-u="image" src="crayonShinChan_01.jpg" /></div>
+            <div><img data-u="image" src="crayonShinChan_02.jpg" /></div>
+        </div>
     </div>
-</div>
 </body>
 
 </html>
