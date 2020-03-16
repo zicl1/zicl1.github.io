@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="./stat.js">//调用</script>
+    <script src="./stat.js">//链接外部tat.js</script>
+    <script src="./underscore.js">//链接外部underscore.js</script>
     <script>
         
         var reduce = 3;//命名冲突
@@ -19,8 +20,16 @@
             ,{name:'软件技术导论', credit:2}
         ];
         
-        //调用
-        console.log(window.my.max(date));
+        //利用第三方库underscore.js的max函数
+        /*max_.max(list, [iteratee], [context])
+        返回list中的最大值。如果传递iteratee参数，iteratee将作为list中每个值的排序依据。如果list为空，将返回-Infinity，所以你可能需要事先用isEmpty检查 list 。
+        var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
+    　  _.max(stooges, function(stooge){ return stooge.age; });
+    　  => {name: 'curly', age: 60};*/
+        console.log(_.max(date, function(date){ return date.credit; underscore}, ));//context:上下文，语境
+
+        //调用(解决命名冲突)
+        // console.log(window.my.max(date));
         
         //对象
         // var obj = {"min": function(a, b){return a < b ? a : b}}
