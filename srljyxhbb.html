@@ -149,14 +149,14 @@
         /* 函数每被调用一次，都会产生一个新的执行上下文环境。
         因为不同的调用可能就会有不同的参数。 */
         /* function fn(x) {
-            console.log(arguments);//-> Arguments [10, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+            console.log(arguments);
             console.log(x);//-> 1 11
         }
-        fn(1);//1
-        fn(11);//11 */
+        fn(1);//Arguments [1]  1
+        fn(11);//Arguments [11] 11 */
         /* 函数在定义的时候（不是调用的时候），就已经确定了函
         数体内部自由变量的作用域。 */
-        var a = 10;
+        /*var a = 10;
         function fn() {
             console.log(a);
         }
@@ -165,7 +165,27 @@
             var a = 20;
             f();
         }
-        bar(fn);//-> 10
+        bar(fn);//-> 10*/
+        /* 如果函数作为构造函数用，那么其中的this就
+        代表它即将new出来的对象。 */
+        /* function Foo() {
+            this.name = '张三';
+            this.year = 3;
+            console.log(this);//-> Foo {name: "张三", year: 3}
+        }
+        var f1 = new Foo();
+        console.log(f1.name);//-> 张三
+        console.log(f1.year);//-> 3 */
+        /*直接调用Foo函数，而不是new Foo()，这种情况下this是window*/
+        /* function Foo() {
+            this.name = '张三';
+            this.year = 3;
+            console.log(this);
+        }
+        Foo();//-> Window */
+
+
+
 </script>
 </head>
 <body>
