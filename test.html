@@ -4,101 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
 <body>
+    <ul></ul>
+    <script src="underscore.js">//链接外部underscore.js</script>
+    <script src="jquery.min.js.js"></script>
     <script>
-        var value = 11;
-        var initvalue = 22;
-
-        function addition() {
-            var value = initvalue;
-
-            return function add(x) {
-                value = value + x;
-                this.initvalue = value;
-            };
-            
-        }
+        $(function(){
+                _.each(data, function(item){
+                    $("ul").append("<li>" + item.name + "(学分：" + item.credit + ")" + "</li>");
+                });
+        });
         
-        var func = addition();
-
-
-        func(33);
-        func(44);
-        
-        console.log(initvalue);
-//用console.log输出99，只能输出一次，(22+33+44)
-
-
-
-
-
-        /* var x=10;
-
-        function fn(){
-            console.log(x);
-        }
-
-        function show(f){
-            var x=20;
-            (function(){
-                f();
-            })();
-        }
-        show(fn); */
-        /* var a=10
-
-        function fn(){
-            var b=20;
-            function bar(){
-                console.log(a+b);
-            }
-            return bar;
-            
-        }
-        var b=200;
-        var x=fn();
-        x(); */
-        /* function fn(){
-            var max=10;
-            return function bar(x){
-                max = max + x;
-                console.log(max);
-            };
-        }
-
-        var f1=fn();
-        f1(15);
-        f1(10); */
-    </script>
-    <script src="./stat.js">//链接外部stat.js</script>
-    <script src="./underscore.js">//链接外部underscore.js</script>
-    <script>
-        
-       /*  var reduce = 3;//命名冲突
-        
-        var date = [
-            {name:'计算机安装与维护', credit:2}
-            ,{name:'静态网页技术', credit:2}
-            ,{name:'计算机编程基础', credit:4}
-            ,{name:'大学英语', credit:2}
-            ,{name:'软件技术导论', credit:2}
-        ]; */
-
-        
-        //利用第三方库underscore.js的max函数
-        /*max_.max(list, [iteratee], [context])
-        返回list中的最大值。如果传递iteratee参数，iteratee将作为list中每个值的排序依据。如果list为空，将返回-Infinity，所以你可能需要事先用isEmpty检查 list 。
-        var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
-    　  _.max(stooges, function(stooge){ return stooge.age; });
-    　  => {name: 'curly', age: 60};*/
-        // console.log(_.max(date, function(date){ return date.credit;}, underscore));//context:上下文，语境
-
-        //调用(解决命名冲突)
-        // console.log(window.my.max(date));
-        
-        //对象
-        // var obj = {"min": function(a, b){return a < b ? a : b}}
+    var data = [
+        {name:"计算机安装与维护",credit:2}
+        ,{name:"静态网页制作",credit:2}
+        ,{name:"计算机编程基础",credit:4}
+        ,{name:"大学英语",credit:2}
+    ];
     </script>
 </body>
 </html>
