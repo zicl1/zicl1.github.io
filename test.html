@@ -10,7 +10,7 @@
     <ul></ul>
     <script src="underscore.js">//链接外部underscore.js</script>
     <script src="jquery.min.js.js"></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         $(function(){
             $.get("./data.json", function(result){//异步
                 console.log(result);
@@ -19,6 +19,25 @@
                 });
             });
         });
+    </script> -->
+    <input id="coursename" />
+    <button id="btn">显示分数</button>
+    <div id="crditdiv">
+    <!-- <script src="./stat.js">//链接外部stat.js</script> -->
+    
+    <script>
+    $(function(){
+        $.get("http://127.0.0.1:8585/data.json", function(data){
+            _.each(data, function(item){
+                $("ul").append("<li>"+item.name+"(学分："+item.credit+")"+"</li>");
+            });
+            $("#btn").click(function(){
+                $.get("http://127.0.0.1:8585/CrditByName?name="+$("#coursename").val(), function(data){
+                    alert(data);
+                });
+            })      
+        });
+    })        
     </script>
 </body>
 </html>
