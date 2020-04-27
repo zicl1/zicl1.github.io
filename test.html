@@ -10,19 +10,15 @@
     <ul></ul>
     <script src="underscore.js">//链接外部underscore.js</script>
     <script src="jquery.min.js.js"></script>
-    <script>
+    <script type="text/javascript">
         $(function(){
-                _.each(data, function(item){
+            $.get("./data.json", function(result){//异步
+                console.log(result);
+                _.each(result, function(item){//异步
                     $("ul").append("<li>" + item.name + "(学分：" + item.credit + ")" + "</li>");
                 });
+            });
         });
-        
-    var data = [
-        {name:"计算机安装与维护",credit:2}
-        ,{name:"静态网页制作",credit:2}
-        ,{name:"计算机编程基础",credit:4}
-        ,{name:"大学英语",credit:2}
-    ];
     </script>
 </body>
 </html>
