@@ -2,29 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZichenYang'website</title>
-    <script>
-//         windows.location.href="/url" 当前页面打开URL页面
-       // window.location.href="https://blog.csdn.net/weixin_48430685";
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font-awesome库 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" />
+    <link rel="stylesheet" href="libs/glide/glide.core.min.css" />
+    <link rel="stylesheet" href="libs/glide/glide.theme.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Zichen | Man Is Here For The Sake of Other Men
+    </title>
 </head>
 <body>
-    
-<center>
-<!--<p>-->
-    <a href="https://blog.csdn.net/weixin_48430685">博客</a>
-    <br />
-    <a href="https://bilibili.com">bilibili</a>
-    <br />
-    <a href="https://mail.qq.com">zichen1016@foxmail.com</a>
-    <br />
-  <embed src="index.mp4" width="960" height="544" autostart="true" loop="true"></embed>
-  <center>
-<!--</p>-->
-<!--<p>
-  <embed src="硅谷传奇.mp4" width="896" height="672" autostart="true" loop="true"></embed>
-</p>
--->
+    <!-- 页眉 -->
+    <header>
+        <div class="logo">Zichen</div>
+        <!-- 导航菜单 -->
+        <nav>
+            <a href="#">首页</a>
+            <a href="#">关于我们</a>
+            <a href="#">成功案例</a>
+            <a href="#">服务流程</a>
+            <a href="#">团队介绍</a>
+            <a href="#">公司动态</a>
+            <!-- 放大镜图标 -->
+            <i class="fas fa-search"></i>
+            <!-- 折叠导航 -->
+            <div class="burger">
+                <div class="burger-line1"></div>
+                <div class="burger-line2"></div>
+                <div class="burger-line3"></div>
+            </div>
+        </nav>
+    </header>
+    <!-- 页眉 -->
+    <!-- 轮播图 -->
+    <div class="glide">
+        <!-- 轮播轨道 -->
+        <div class="glide__track" data-glide-el="track">
+            <!-- 轮播容器 -->
+            <div class="glide__slides">
+                <!-- 轮播元素1 -->
+                <div class="glide__slide">
+                    <!-- 自定义轮播的内容 -->
+                    <!-- 大标题 -->
+                    <div class="slide-caption">
+                        <h1>Zichen</h1>
+                        <h3>Hello World!</h3>
+                        <button class="explore-btn">点击开启</button>
+                    </div>
+                    <!-- 图片上方遮罩灰色使文字显示清晰 -->
+                    <div class="backdrop"></div>
+                    <!-- 轮播图片 -->
+                    <img src="images/IMG_3928.jpg" alt="" class="src">
+                </div>
+                <!-- 轮播元素2 -->
+                <div class="glide__slide">
+                    <!-- 自定义轮播的内容 -->
+                    <div class="slide-caption left">
+                        <!-- 大标题 -->
+                        <h1>85785785785785758</h1>
+                        <h3>Hello World!</h3>
+                        <button class="explore-btn">点击开启</button>
+                    </div>
+                    <!-- 图片上方遮罩灰色使文字显示清晰 -->
+                    <div class="backdrop"></div>
+                    <!-- 轮播图片 -->
+                    <img src="images/IMG_4290.jpg" alt="" class="src">                        
+                </div>                
+            </div>
+        </div>
+        <!-- 切换轮播的按钮 -->
+        <div class="glide__arrows" data-glide-el="controls">
+            <!-- 上一张下一张按钮 -->
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                <
+            </button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                >
+            </button>
+        </div>
+        <!-- 控制圆点 -->
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+            <!-- 跳转到第1、第2张图片 -->
+            <button class="glide__bullet yuandian" data-glide-dir="=0"></button>
+            <button class="glide__bullet yuandian" data-glide-dir="=1"></button>
+        </div>
+    </div>
+    <!-- 轮播图 -->
+    <!-- 轮播组件初始化 -->
+    <script src="libs/anime/anime.min.js"></script>
+    <script src="libs/glide/glide.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
