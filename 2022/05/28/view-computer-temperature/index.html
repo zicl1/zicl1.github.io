@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>View computer temperature | Zichen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="查看电脑温度和电脑临界温度在Windows PowerShell上右键，以管理员身份运行。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="View computer temperature">
+<meta property="og:url" content="https://zicl1.github.io/2022/05/28/view-computer-temperature/index.html">
+<meta property="og:site_name" content="Zichen">
+<meta property="og:description" content="查看电脑温度和电脑临界温度在Windows PowerShell上右键，以管理员身份运行。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zicl1.github.io/2022/05/28/view-computer-temperature/image-20220529150913554.png">
+<meta property="og:image" content="https://zicl1.github.io/2022/05/28/view-computer-temperature/image-20220529153751682.png">
+<meta property="og:image" content="https://zicl1.github.io/2022/05/28/view-computer-temperature/image-20220529154252793.png">
+<meta property="og:image" content="https://zicl1.github.io/2022/05/28/view-computer-temperature/image-20220529155019685.png">
+<meta property="article:published_time" content="2022-05-28T06:14:14.000Z">
+<meta property="article:modified_time" content="2023-09-30T13:34:58.566Z">
+<meta property="article:author" content="Zichen">
+<meta property="article:tag" content="Download">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zicl1.github.io/2022/05/28/view-computer-temperature/image-20220529150913554.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Zichen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?786cc850f704e5c91f9db88eaa7e7798";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Zichen</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zicl1.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-view-computer-temperature" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/05/28/view-computer-temperature/" class="article-date">
+  <time datetime="2022-05-28T06:14:14.000Z" itemprop="datePublished">2022-05-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      View computer temperature
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="查看电脑温度和电脑临界温度"><a href="#查看电脑温度和电脑临界温度" class="headerlink" title="查看电脑温度和电脑临界温度"></a>查看电脑温度和电脑临界温度</h2><p>在Windows PowerShell上右键，以管理员身份运行。</p>
+<p><img src="/2022/05/28/view-computer-temperature/image-20220529150913554.png" alt="image-20220529150913554"></p>
+<span id="more"></span>
+
+<pre><code class="shell"> PS C:\Windows\system32&gt; gwmi msacpi_thermalzonetemperature -namespace &quot;root/wmi&quot;
+
+
+__GENUS              : ……
+__CLASS              : ……
+__SUPERCLASS         : ……
+__DYNASTY            : ……
+__RELPATH            : ……
+__PROPERTY_COUNT     : ……
+__DERIVATION         : ……
+__SERVER             : ……
+__NAMESPACE          : ……
+__PATH               : ……
+Active               : ……
+ActiveTripPoint      : ……
+ActiveTripPointCount : ……
+CriticalTripPoint    : 3922
+CurrentTemperature   : 3272
+InstanceName         : ……
+PassiveTripPoint     : 0
+Reserved             : 0
+SamplingPeriod       : 0
+ThermalConstant1     : 0
+ThermalConstant2     : 0
+ThermalStamp         : ……
+PSComputerName       : ……
+
+
+
+PS C:\Windows\system32&gt; $temp = gwmi msacpi_thermalzonetemperature -namespace &quot;root/wmi&quot;
+PS C:\Windows\system32&gt; $temp.CriticalTripPoint / 10 - 273.15
+119.05
+PS C:\Windows\system32&gt; $temp.CurrentTemperature / 10 - 273.15
+54.05
+PS C:\Windows\system32&gt;
+</code></pre>
+<h2 id="使用软件查看"><a href="#使用软件查看" class="headerlink" title="使用软件查看"></a>使用软件查看</h2><!--软件下载(网盘)：<a href="/2022/04/14/software-download/" title="Software download">Software download</a>-->
+
+<p>软件下载(网盘)：<a target="_blank" rel="noopener" href="https://zichenlbl.github.io/2022/04/14/software-download/#Core-Temp">https://zichenlbl.github.io/2022/04/14/software-download/#Core-Temp</a></p>
+<h3 id="CoreTemp"><a href="#CoreTemp" class="headerlink" title="CoreTemp"></a>CoreTemp</h3><p>官网下载：<a target="_blank" rel="noopener" href="https://www.alcpu.com/CoreTemp/Core-Temp-setup.exe">https://www.alcpu.com/CoreTemp/Core-Temp-setup.exe</a></p>
+<p><img src="/2022/05/28/view-computer-temperature/image-20220529153751682.png" alt="image-20220529153751682"></p>
+<h3 id="AIDA64"><a href="#AIDA64" class="headerlink" title="AIDA64"></a>AIDA64</h3><p>官网下载：<a target="_blank" rel="noopener" href="https://www.aida64.com/downloads">https://www.aida64.com/downloads</a></p>
+<p><img src="/2022/05/28/view-computer-temperature/image-20220529154252793.png" alt="image-20220529154252793"></p>
+<p>MY：</p>
+<pre><code class="apl">UK4F4-3F2D6-FJD9J-C4D34-FYY12
+UKXB1-Y3ED6-FJD9J-C4D34-FYY1U
+UKIU4-933D6-FJD9J-C4D34-FYY1B
+</code></pre>
+<h3 id="MSI-Afterburner"><a href="#MSI-Afterburner" class="headerlink" title="MSI Afterburner"></a>MSI Afterburner</h3><p>官网下载：<a target="_blank" rel="noopener" href="https://www.msi.com/Landing/afterburner/graphics-cards">https://www.msi.com/Landing/afterburner/graphics-cards</a></p>
+<p><img src="/2022/05/28/view-computer-temperature/image-20220529155019685.png" alt="image-20220529155019685"></p>
+<p>End.</p>
+<p>谢谢您的阅读！</p>
+<p>Copyright 2022 Zichen</p>
+<p>Licensed under the Apache License, Version 2.0 (the “License”);<br>you may not use this file except in compliance with the License.<br>You may obtain a copy of the License at</p>
+<p><a target="_blank" rel="noopener" href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+<p>Unless required by applicable law or agreed to in writing, software<br>distributed under the License is distributed on an “AS IS” BASIS,<br>WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<br>See the License for the specific language governing permissions and<br>limitations under the License.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zicl1.github.io/2022/05/28/view-computer-temperature/" data-id="clzjk1e4c008zmcr9buq757hu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Download/" rel="tag">Download</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+    
+    <div id="my-container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+    var gitment = new Gitment({
+      id: 'View computer temperature', // 可选。默认为 location.href, 现在改为页面的标题https://hexo.io/zh-cn/docs/variables.html
+      owner: 'zicl1',
+      repo: 'discuss',
+      oauth: {
+        client_id: '41bf782a65aabaed603c',
+        client_secret: '008c8b70c4aa044a21d8752b9df92799dd327fef',
+      },
+    })
+    gitment.render('my-container')
+    </script>
+    
+    
+<nav id="article-nav">
+  
+    <a href="/2022/06/03/2022-06-03/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          2022年06月03日
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/25/linux-basics/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux basics</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NET/" rel="tag">.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Download/" rel="tag">Download</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/" rel="tag">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Personal-website/" rel="tag">Personal website</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NET/" style="font-size: 15px;">.NET</a> <a href="/tags/Download/" style="font-size: 15px;">Download</a> <a href="/tags/Life/" style="font-size: 20px;">Life</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Personal-website/" style="font-size: 10px;">Personal website</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">六月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">一月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/06/01/2024-06-01/">2024年06月01日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/25/2024-05-25/">2024年05月25日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/18/2024-05-18/">2024年05月18日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/12/2024-05-12/">2024年05月12日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/02/2024-05-02/">2024年05月02日</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022-2024 Zichen<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/" target="_blank">Github</a> <a href="https://ibruce.info/" target="_blank">不蒜子</a> <br>
+      <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
+      <span id="busuanzi_container_site_uv">本站访客数 <span id="busuanzi_value_site_uv"></span> 人次
+      <br/>
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001" target="_blank">
+        <img width="13px" src="/css/images/gongan.png"/>
+        京公网安备 11000002000001 号
+      </a> &nbsp;
+      <a href="https://beian.miit.gov.cn/" target="_blank"> 京ICP证030173号 </a>
+      </span>
+      <br/>
+      建议您使用Edge、Chrome 80+、FireFox 86+、360极速模式等主流浏览器浏览本网站
+    </div>
+  </div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

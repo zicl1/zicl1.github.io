@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Zichen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Zichen">
+<meta property="og:url" content="https://zicl1.github.io/page/18/index.html">
+<meta property="og:site_name" content="Zichen">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Zichen">
+<meta property="article:tag" content="zichen, Zichen">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Zichen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?786cc850f704e5c91f9db88eaa7e7798";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Zichen</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zicl1.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2022-06-14" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/14/2022-06-14/" class="article-date">
+  <time datetime="2022-06-14T14:20:00.000Z" itemprop="datePublished">2022-06-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/14/2022-06-14/">2022年06月14日</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2022/06/14/2022-06-14/image-20220614215542587.png" alt="image-20220614215542587"></p>
+        
+          <p class="article-more-link">
+            <a href="/2022/06/14/2022-06-14/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zicl1.github.io/2022/06/14/2022-06-14/" data-id="clzjk1e2i0009mcr97gem7b0c" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/" rel="tag">Life</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2022-06-09" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/09/2022-06-09/" class="article-date">
+  <time datetime="2022-06-09T14:20:00.000Z" itemprop="datePublished">2022-06-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/09/2022-06-09/">2022年06月09日</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="图形验证码"><a href="#图形验证码" class="headerlink" title="图形验证码"></a>图形验证码</h2><p>后端生成的图片二维码保存为<code>byte[]</code>(字节数组)，字节数组转成<code>base64</code>编码字符串，返回前端字符串。</p>
+<pre><code class="c#">byte[] mData = CheckCodeByPicHelp.f_GetCode(4, ref mCode); // 长度, 验证码值
+string checkcodepic = Convert.ToBase64String(mData);
+</code></pre>
+<p>Redis数据库中存 YanZhengMa:<code>GUID</code>(唯一值)，值存验证码(2we3)，过期时间秒；返回前端GUID。</p>
+        
+          <p class="article-more-link">
+            <a href="/2022/06/09/2022-06-09/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zicl1.github.io/2022/06/09/2022-06-09/" data-id="clzjk1e250000mcr9esq5gn1p" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/" rel="tag">Life</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2022-06-06" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/06/2022-06-06/" class="article-date">
+  <time datetime="2022-06-06T14:13:00.000Z" itemprop="datePublished">2022-06-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/06/2022-06-06/">2022年06月06日</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="图形验证码"><a href="#图形验证码" class="headerlink" title="图形验证码"></a>图形验证码</h2><p>图形验证码主要代码：</p>
+<p>路由：/Utilte</p>
+        
+          <p class="article-more-link">
+            <a href="/2022/06/06/2022-06-06/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zicl1.github.io/2022/06/06/2022-06-06/" data-id="clzjk1e2a0002mcr9g56mfn9q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/" rel="tag">Life</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2022-06-03" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/03/2022-06-03/" class="article-date">
+  <time datetime="2022-06-03T15:13:00.000Z" itemprop="datePublished">2022-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/03/2022-06-03/">2022年06月03日</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>端午节。</p>
+<p><img src="/2022/06/03/2022-06-03/IMG_20220603_161955.jpg" alt="IMG_20220603_161955"></p>
+        
+          <p class="article-more-link">
+            <a href="/2022/06/03/2022-06-03/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zicl1.github.io/2022/06/03/2022-06-03/" data-id="clzjk1e2e0004mcr9e1af27vk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/" rel="tag">Life</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-view-computer-temperature" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/05/28/view-computer-temperature/" class="article-date">
+  <time datetime="2022-05-28T06:14:14.000Z" itemprop="datePublished">2022-05-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/28/view-computer-temperature/">View computer temperature</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="查看电脑温度和电脑临界温度"><a href="#查看电脑温度和电脑临界温度" class="headerlink" title="查看电脑温度和电脑临界温度"></a>查看电脑温度和电脑临界温度</h2><p>在Windows PowerShell上右键，以管理员身份运行。</p>
+<p><img src="/2022/05/28/view-computer-temperature/image-20220529150913554.png" alt="image-20220529150913554"></p>
+        
+          <p class="article-more-link">
+            <a href="/2022/05/28/view-computer-temperature/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zicl1.github.io/2022/05/28/view-computer-temperature/" data-id="clzjk1e4c008zmcr9buq757hu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Download/" rel="tag">Download</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux-basics" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/25/linux-basics/" class="article-date">
+  <time datetime="2022-04-25T02:47:55.000Z" itemprop="datePublished">2022-04-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/25/linux-basics/">Linux basics</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux内核网站：<a target="_blank" rel="noopener" href="https://www.kernel.org/">The Linux Kernel Archives</a></p>
+<p>Centos下载：<a target="_blank" rel="noopener" href="http://mirrors.163.com/centos/">Index of /centos/ (163.com)</a>、<a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/centos/">阿里云开源镜像站资源目录 (aliyun.com)</a></p>
+<p>分区：引导分区1G、交换分区与内存相同、根分区。</p>
+<h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><p>bin：存放常用的指令</p>
+        
+          <p class="article-more-link">
+            <a href="/2022/04/25/linux-basics/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zicl1.github.io/2022/04/25/linux-basics/" data-id="clzjk1e4b008tmcr9el49fzqc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-natsumes-book-of-friends" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/21/natsumes-book-of-friends/" class="article-date">
+  <time datetime="2022-04-21T11:47:55.000Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/21/natsumes-book-of-friends/">夏目友人帐</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第一季"><a href="#第一季" class="headerlink" title="第一季"></a>第一季</h2><h3 id="01猫と友人帳-猫与友人帐"><a href="#01猫と友人帳-猫与友人帐" class="headerlink" title="01猫と友人帳(猫与友人帐)"></a>01猫と友人帳(猫与友人帐)</h3><p>两个妖怪把<em>夏目</em>认成<em>令子</em>，追赶<em>夏目</em>。</p>
+<p><em>夏目</em>的两个同学在路上聊天说打工当然要去海边啦——海之家，说不定还能与美妹来一段美丽的邂逅。</p>
+<p><em>夏目</em>从路边的树林中跑出来吓到同学，同学问他在干嘛，<em>夏目</em>说没事，并问他们附近有没有神社。一个同学说穿过那边的树丛倒是有一个。然后<em>夏目</em>朝神社的方向跑去了，两个同学很疑惑他慌什么。随后一阵大风从两个同学身前刮过，一个同学疑惑刚才有什么经过，好大一阵风。</p>
+        
+          <p class="article-more-link">
+            <a href="/2022/04/21/natsumes-book-of-friends/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zicl1.github.io/2022/04/21/natsumes-book-of-friends/" data-id="clzjk1e4c0091mcr9frlpht1h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/" rel="tag">Life</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-pat-practice" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/16/pat-practice/" class="article-date">
+  <time datetime="2022-04-16T00:30:00.000Z" itemprop="datePublished">2022-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/16/pat-practice/">PAT (Basic Level) Practice 1001-1005</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1001害死人不偿命的-3n-1-猜想"><a href="#1001害死人不偿命的-3n-1-猜想" class="headerlink" title="1001害死人不偿命的(3n+1)猜想"></a>1001害死人不偿命的(3n+1)猜想</h2><p><img src="/2022/04/16/pat-practice/image-20220416090836388.png" alt="image-20220416090836388"></p>
+        
+          <p class="article-more-link">
+            <a href="/2022/04/16/pat-practice/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zicl1.github.io/2022/04/16/pat-practice/" data-id="clzjk1e4b008wmcr90f1t3p3b" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PAT/" rel="tag">PAT</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-software-download" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/14/software-download/" class="article-date">
+  <time datetime="2022-04-13T23:07:42.000Z" itemprop="datePublished">2022-04-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/14/software-download/">Software download</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="http://www.gov.cn/guoqing/2021-10/29/content_5647633.htm">权利的限制 </a>：为个人学习、研究或者欣赏，使用他人已经发表的作品；可以不经著作权人许可，不向其支付报酬，但应当指明作者姓名或者名称、作品名称，并且不得影响该作品的正常使用，也不得不合理地损害著作权人的合法权益。<br>所有软件均为Windows64位系统(32位系统会标注)和Android apk文件(会标注), 如有问题请联系<a target="_blank" rel="noopener" href="https://support.qq.com/products/287956">Zichen学习交流</a>或邮箱联系我<a href="mailto:&#122;&#105;&#99;&#x6c;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#109;">&#122;&#105;&#99;&#x6c;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#109;</a>。</p>
+<!--Hexo标签插件的引用-->
+
+<blockquote><footer><strong>关注微信公众号</strong><cite><a target="_blank" rel="noopener" href="https://web.opendrive.com/api/v1/download/file.json/N18yMDk2Nzg1OTNf?inline=1">A子辰</a></cite></footer></blockquote>
+
+<h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><h3 id="After-Effects"><a href="#After-Effects" class="headerlink" title="After Effects"></a>After Effects</h3><p>「After Effects CC 2018.exe」</p>
+<p>阿里云盘：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/97WGqnBqGjU">https://www.aliyundrive.com/s/97WGqnBqGjU</a> 提取码: 7ud3 </p>
+<p>百度网盘：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1UhDijjgae0DyNi8G1UrUrw">https://pan.baidu.com/s/1UhDijjgae0DyNi8G1UrUrw</a> 提取码：0cwb</p>
+        
+          <p class="article-more-link">
+            <a href="/2022/04/14/software-download/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zicl1.github.io/2022/04/14/software-download/" data-id="clzjk1e4b008ymcr9ay7k20wo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Download/" rel="tag">Download</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+	
+    <a class="extend prev" rel="prev" href="/page/17/">« 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/19/">下一页 »</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NET/" rel="tag">.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Download/" rel="tag">Download</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/" rel="tag">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Personal-website/" rel="tag">Personal website</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NET/" style="font-size: 15px;">.NET</a> <a href="/tags/Download/" style="font-size: 15px;">Download</a> <a href="/tags/Life/" style="font-size: 20px;">Life</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Personal-website/" style="font-size: 10px;">Personal website</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">六月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">一月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/06/01/2024-06-01/">2024年06月01日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/25/2024-05-25/">2024年05月25日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/18/2024-05-18/">2024年05月18日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/12/2024-05-12/">2024年05月12日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/02/2024-05-02/">2024年05月02日</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022-2024 Zichen<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/" target="_blank">Github</a> <a href="https://ibruce.info/" target="_blank">不蒜子</a> <br>
+      <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
+      <span id="busuanzi_container_site_uv">本站访客数 <span id="busuanzi_value_site_uv"></span> 人次
+      <br/>
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001" target="_blank">
+        <img width="13px" src="/css/images/gongan.png"/>
+        京公网安备 11000002000001 号
+      </a> &nbsp;
+      <a href="https://beian.miit.gov.cn/" target="_blank"> 京ICP证030173号 </a>
+      </span>
+      <br/>
+      建议您使用Edge、Chrome 80+、FireFox 86+、360极速模式等主流浏览器浏览本网站
+    </div>
+  </div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

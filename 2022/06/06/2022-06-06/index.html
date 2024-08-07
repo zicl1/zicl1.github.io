@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>2022年06月06日 | Zichen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="图形验证码图形验证码主要代码： 路由：&#x2F;Utilte">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022年06月06日">
+<meta property="og:url" content="https://zicl1.github.io/2022/06/06/2022-06-06/index.html">
+<meta property="og:site_name" content="Zichen">
+<meta property="og:description" content="图形验证码图形验证码主要代码： 路由：&#x2F;Utilte">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-06T14:13:00.000Z">
+<meta property="article:modified_time" content="2023-09-30T13:34:58.041Z">
+<meta property="article:author" content="Zichen">
+<meta property="article:tag" content="Life">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Zichen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?786cc850f704e5c91f9db88eaa7e7798";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Zichen</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zicl1.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2022-06-06" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/06/2022-06-06/" class="article-date">
+  <time datetime="2022-06-06T14:13:00.000Z" itemprop="datePublished">2022-06-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2022年06月06日
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="图形验证码"><a href="#图形验证码" class="headerlink" title="图形验证码"></a>图形验证码</h2><p>图形验证码主要代码：</p>
+<p>路由：/Utilte</p>
+<span id="more"></span>
+
+<pre><code class="c#">if (mCodeLeng &lt; 4)
+&#123;//最小4位
+    mCodeLeng = 4;
+&#125;
+string mCode = &quot;&quot;;
+byte[] mData = CheckCodeByPicHelp.f_GetCode(mCodeLeng, ref mCode); //生成图像验证码
+if (mData != null)
+&#123;
+    RedisHelper redis = new RedisHelper(0);     //记录会话状态
+    string mXWCodeStr = &quot;&quot;;       //验证码字段
+    string mGUID = System.Guid.NewGuid().ToString();        //获取当前guid
+    mXWCodeStr = XWSuperClass.S_XWCheckCodeByPIC_QZ + mGUID;       //规则 前缀 + GUID
+    redis.StringSet(mXWCodeStr, mCode, TimeSpan.FromSeconds(XWSuperClass.S_XWCheckCodeTimeOUT));
+    RCheckCodeByPic mRCheckCodeByPic = new RCheckCodeByPic()
+    &#123;
+        codeid = mGUID,
+        checkcodepic = Convert.ToBase64String(mData)
+    &#125;;
+    return AjaxResult.Success(mRCheckCodeByPic, &quot;获取验证码成功&quot;);
+&#125;
+</code></pre>
+<p>生成图像验证码：</p>
+<pre><code class="c#">using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using TIS.Utilte.Log;
+
+namespace TIS.Utilte.CheckCode
+&#123;
+    /// &lt;summary&gt;
+    /// 图像验证码
+    /// &lt;/summary&gt;
+    public class CheckCodeByPicHelp
+    &#123;
+        /// &lt;summary&gt;
+        ///  生成code
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;len&quot;&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        private static string CreateValidateCode(int len)
+        &#123;
+            // 设置允许出现的字符
+            string charStrs = &quot;dsadfjlwepqsdfkfhdkasrxfownds34566451346&quot;;
+            Random random = new Random();
+            // 通过随机数生成code
+            string code = String.Empty;
+            for (int i = 0; i &lt; len; i++)
+            &#123;
+                code += charStrs[random.Next(charStrs.Length)];
+            &#125;
+            return code;
+        &#125;
+
+        /// &lt;summary&gt;
+        /// 生成code并提供两种方式存储 建议采用字节流存储
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;code&quot;&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        private static Byte[] GenerateCode(string code)
+        &#123;
+            // 创建画板  设置宽度和高度 
+            Bitmap bitmap = new Bitmap(code.Length * 23, 47);
+            // 创建画笔
+            Graphics graphics = Graphics.FromImage(bitmap);
+            // 给画布涂上背景
+            graphics.Clear(Color.White);
+            // 设置颜料板和调色刷
+            RectangleF rectangleF = new RectangleF(0, 0, bitmap.Width, bitmap.Height);
+            Color[] mColors = &#123; Color.Red, Color.Yellow, Color.Blue, Color.Green,
+                Color.DarkBlue, Color.GreenYellow, Color.Black, Color.Purple &#125;;
+            Random random = new Random();
+            Color mCodeColor = mColors[random.Next(mColors.Length)];
+            LinearGradientBrush linearGradientBrush = new LinearGradientBrush(rectangleF, mCodeColor, Color.DarkBlue, 1.2f, true);
+            // 设置需要画到图中文字的格式（字体，大小，是否加粗，斜体）
+            Font font = new Font(&quot;Consolas&quot;, 22, FontStyle.Bold | FontStyle.Italic);
+            // 将 文字画到面板上
+            graphics.DrawString(code, font, linearGradientBrush, 0, 0);
+
+            // 存储验证码
+            #region 存储法一 路径存储
+            //bitmap.Save(&quot;code.jpg&quot;);
+            #endregion
+            #region 存储法二 字节流存储
+            using (MemoryStream stream = new MemoryStream())
+            &#123;
+                bitmap.Save(stream, ImageFormat.Jpeg);
+                byte[] mData = stream.ToArray();
+                bitmap.Dispose();
+                graphics.Dispose();
+                return mData;
+            &#125;
+            #endregion
+        &#125;
+
+        /// &lt;summary&gt;
+        /// 生成图像验证码
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;pCode&quot;&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public static Byte[] f_GetCode(int pCodeLeng, ref string pCode)
+        &#123;
+            string mCodeStr = CreateValidateCode(pCodeLeng);        //生成一个验证码 abc4
+            byte[] mData = GenerateCode(mCodeStr);      //获取图像验证码
+            if (mData != null)
+            &#123;
+                pCode = mCodeStr;       //获取验证码
+            &#125;
+            return mData;
+        &#125;
+
+    &#125;
+&#125;
+</code></pre>
+<p>返回数据：</p>
+<pre><code class="json">  &#123;
+  &quot;s_ErrCode&quot;: 0,
+  &quot;message&quot;: &quot;获取验证码成功&quot;,
+  &quot;data&quot;: &#123;
+    &quot;codeid&quot;: &quot;11ecc80d-0f0b-49f5-8678-201f6768ce3e&quot;,
+    &quot;checkcodepic&quot;: &quot;/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHB......&quot;
+  &#125;
+&#125;
+</code></pre>
+<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><pre><code class="c#">string mCheckCodeId = pJsonValue[&quot;checkcode_id&quot;].ToString();        //验证码id
+string mCheckCode = pJsonValue[&quot;checkcode&quot;].ToString();        //验证码
+RedisHelper redis = new RedisHelper(0);     //记录会话状态
+string mXWCheckCodeIdKey = XWSuperClass.S_XWCheckCodeByPIC_QZ + mCheckCodeId;      //获取会话id
+string mGetCheckCodeStr = redis.StringGet(mXWCheckCodeIdKey);     //获取checkcode
+redis.KeyDelete(mXWCheckCodeIdKey);     //验证成功后删除
+if (string.IsNullOrEmpty(mGetCheckCodeStr))
+&#123;
+    return AjaxResult.Error(&quot;验证码错误&quot;, AjaxResult.ErrCode.CheckCodeErr);
+&#125;
+if (mGetCheckCodeStr != mCheckCode)
+&#123;
+    return AjaxResult.Error(&quot;验证码错误&quot;, AjaxResult.ErrCode.CheckCodeErr);
+&#125;
+
+mUserPwd = CodeHelp.f_GetMD5Hash32(mUserPwd);
+///////////////////////////查询数据///////////////////////////
+IQuery&lt;xwtis_sys_user&gt; m_q_sysuser = context.Query&lt;xwtis_sys_user&gt;();       //获取xwtis_sys_user表数据
+var mGetSysUser = m_q_sysuser.Where(a =&gt; a.user_code == mUserName &amp;&amp;
+                                    a.user_status == &quot;1&quot;).Select(a =&gt; new
+                                                                 &#123;
+                                                                     a.iid,
+                                                                     a.user_code,
+                                                                     a.user_name,
+                                                                     a.user_pwd
+                                                                 &#125;).FirstOrDefault();
+if (mGetSysUser == null || mGetSysUser.user_pwd != mUserPwd)
+&#123;
+    return AjaxResult.Error(&quot;用户名或密码错误&quot;);
+&#125;
+mUserId = mGetSysUser.iid.ToString();      //获取用户id
+
+///////////////////////////返回数据///////////////////////////
+TokenUserInfo mUserInfo = new TokenUserInfo();
+mUserInfo.S_UserId = mUserId;        //用户id
+mUserInfo.S_UserCode = mGetSysUser.user_code;     //用户编码
+mUserInfo.S_UserName = mGetSysUser.user_name;     //用户名称
+string mGetTokenErr = &quot;&quot;;       //获取Toke错误信息
+string mToke = TokenHelp.f_GetToken(mUserInfo, ref mGetTokenErr);       //获取登录Token
+if (!string.IsNullOrEmpty(mGetTokenErr))
+&#123;
+    LogManager.WriteLog(&quot;登录异常 获取令牌异常 &quot; + mGetTokenErr);
+    return AjaxResult.Error(&quot;登录异常 获取令牌异常&quot;, AjaxResult.ErrCode.Err);
+&#125;
+string mXWSessionId = &quot;&quot;;       //会话key
+string mGUID = System.Guid.NewGuid().ToString();        //获取当前guid
+mXWSessionId = XWSuperClass.S_XWSessionId_Qz + mGUID;       //规则 前缀 + GUID
+redis.StringSet(mXWSessionId, DateTime.Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;), TimeSpan.FromSeconds(XWSuperClass.S_XWSessionTimeOUT));
+RUserTokenInfo mRUserTokenInfo = new RUserTokenInfo()
+&#123;
+    user_id = mUserId,      //用户名
+    token = mToke,       //登录token
+    xwsessionid = mGUID      //会话id
+&#125;;
+return AjaxResult.Success(mRUserTokenInfo, &quot;登录成功&quot;);
+</code></pre>
+<pre><code class="json">调用示例
+
+&#123;
+    &quot;header&quot;: &#123;
+        &quot;actionname&quot;: &quot;Login&quot;
+    &#125;,
+    &quot;body&quot;: &#123;
+        &quot;user_name&quot;:&quot;se&quot;,
+        &quot;user_pwd&quot;:&quot;测试&quot;,
+        &quot;checkcode_id&quot;:&quot;2403f6e6-b5b0-43c9-919f-d47c6bc5553b&quot;,
+        &quot;checkcode&quot;:&quot;h5s6&quot;
+    &#125;
+&#125;
+返回示例
+
+  &#123;
+  &quot;s_ErrCode&quot;: 0,
+  &quot;message&quot;: &quot;登录成功&quot;,
+  &quot;data&quot;: &#123;
+    &quot;user_id&quot;: &quot;001&quot;,
+    &quot;token&quot;: &quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.e......&quot;,
+    &quot;xwsessionid&quot;: &quot;4a57cdbd-3e91-4a05-ba65-aef5d5300c20&quot;
+  &#125;
+&#125;
+</code></pre>
+<h2 id="刷新token"><a href="#刷新token" class="headerlink" title="刷新token"></a>刷新token</h2><pre><code class="c#">TokenUserInfo mUserInfo = new TokenUserInfo();
+mUserInfo.S_UserId = pJsonValue[&quot;user_id&quot;].ToString();        //用户编码
+mUserInfo.S_UserName = pJsonValue[&quot;user_name&quot;].ToString();     //用户名称
+string mGetTokenErr = &quot;&quot;;       //获取Toke错误信息
+string mToke = TokenHelp.f_GetToken(mUserInfo, ref mGetTokenErr);       //获取登录Token
+if (!string.IsNullOrEmpty(mGetTokenErr))
+&#123;
+    LogManager.WriteLog(&quot;登录异常 获取令牌异常 &quot; + mGetTokenErr);
+    return AjaxResult.Error(&quot;登录异常 获取令牌异常&quot;, AjaxResult.ErrCode.Err);
+&#125;
+JObject mJObject = new JObject();
+mJObject[&quot;token&quot;] = mToke;      //Token
+return AjaxResult.Success(mJObject, &quot;刷新token成功&quot;);
+</code></pre>
+<h2 id="获取菜单和用户权限"><a href="#获取菜单和用户权限" class="headerlink" title="获取菜单和用户权限"></a>获取菜单和用户权限</h2><pre><code class="c#">if (f_IsArgeNullOrEmpty(pJsonValue, &quot;user_id&quot;))
+&#123;
+    return AjaxResult.Error(&quot;登录参数不正确&quot;, AjaxResult.ErrCode.Err);
+&#125;
+int mUserId = -1;       //用户id
+string mInstitutionCode = &quot;&quot;;       //机构编码
+string mInstitutionName = &quot;&quot;;       //机构名称
+try
+&#123;
+    mUserId = Convert.ToInt32(pJsonValue[&quot;user_id&quot;].ToString());
+&#125;
+catch
+&#123;
+    return AjaxResult.Error(&quot;登录参数不正确&quot;, AjaxResult.ErrCode.Err);
+&#125;
+List&lt;string&gt; mAidList = new List&lt;string&gt;();     //所有AID集合
+MySqlContext context = new MySqlContext(new MySqlConnectionFactory(SuperConClass.S_MPIDBICPCConStr));
+try
+&#123;
+    ///////////////////////////获取用户机构和角色///////////////////////////
+    var mGetUserInstitution = context.JoinQuery&lt;xwtis_sys_user_institution, xwtis_sys_institution&gt;((user_institution, institution) =&gt; new object[]
+                                                                                                   &#123;
+                                                                                                       JoinType.LeftJoin, user_institution.institution_code == institution.institution_code,          /* 表 xwtis_sys_user_institution 和 xwtis_sys_institution 进行Left连接 */
+                                                                                                   &#125;)
+        .Select((user_institution, institution) =&gt; new
+                &#123;
+                    institution.institution_code,
+                    institution.institution_name,
+                    user_institution.user_iid
+                &#125;)
+        .Where(a =&gt; a.user_iid == mUserId)
+        .FirstOrDefault();      //默认只有一个机构
+    ///////////////////////////获取菜单权限///////////////////////////
+    List&lt;RActionClass&gt; mNodes = new List&lt;RActionClass&gt;();
+    if (mGetUserInstitution != null)
+    &#123;
+        mInstitutionCode = mGetUserInstitution.institution_code;        //机构编码
+        mInstitutionName = mGetUserInstitution.institution_name;        //机构名称
+        var mGetAction_menu = context.JoinQuery&lt;xwtis_sys_user_institution, xwtis_sys_role_action, xwtis_sys_action&gt;((user_institution, role_action, action) =&gt; new object[]
+                                                                                                                     &#123;
+                                                                                                                         JoinType.LeftJoin, user_institution.role_iid == role_action.role_iid,          /* 表 xwtis_sys_user_institution 和 xwtis_sys_role_action 进行Left连接 */
+                                                                                                                             JoinType.LeftJoin, role_action.action_iid == action.iid          /* 表 xwtis_sys_role_action 和 xwtis_sys_action 进行Left连接 */
+                                                                                                                     &#125;)
+            .Select((user_institution, role_action, action) =&gt; new
+                    &#123;
+                        user_id = user_institution.iid,
+                        user_institution.institution_code,
+                        action.actiontype,
+                        action_id = action.aid,
+                        action.paid,
+                        action.path,
+                        action.component,
+                        action.redirect,
+                        action.adescribe,
+                        action.icopath,
+                        action.isvisible,
+                        action.sys_type,
+                        action.sortid
+                    &#125;)
+            .Where(a =&gt; a.user_id == mUserId &amp;&amp; a.institution_code == mInstitutionCode
+                   &amp;&amp; a.actiontype == &quot;W&quot; &amp;&amp; a.isvisible == &quot;Y&quot;)
+            .OrderBy(a =&gt; a.sortid).ToList();
+        //获取所有子项
+        foreach (var mMenuItem in mGetAction_menu)
+        &#123;
+            if (!mAidList.Contains(mMenuItem.action_id.ToString()))
+            &#123;//添加权限
+                mAidList.Add(mMenuItem.action_id.ToString());
+            &#125;
+            mNodes.Add(new RActionClass()
+                       &#123;
+                           id = mMenuItem.action_id.ToString(),
+                           pid = mMenuItem.paid.ToString(),
+                           path = mMenuItem.path,
+                           component = mMenuItem.component,
+                           redirect = mMenuItem.redirect,
+                           name = mMenuItem.action_id.ToString(),
+                           meta = new RMeta()
+                           &#123;
+                               title = mMenuItem.adescribe,
+                               icon = mMenuItem.icopath,
+                               roles = new string[] &#123; mUserId.ToString() &#125;
+                           &#125;
+                       &#125;);
+        &#125;
+    &#125;
+
+    ///////////////////////////获取用户权限///////////////////////////
+    List&lt;RActionUserClass&gt; mNode_Users = new List&lt;RActionUserClass&gt;();
+    if (mGetUserInstitution != null)
+    &#123;
+        mInstitutionCode = mGetUserInstitution.institution_code;        //机构编码
+        mInstitutionName = mGetUserInstitution.institution_name;        //机构名称
+        var mGetAction_User = context.JoinQuery&lt;xwtis_sys_user_institution, xwtis_sys_role_action, xwtis_sys_action&gt;((user_institution, role_action, action) =&gt; new object[]
+                                                                                                                     &#123;
+                                                                                                                         JoinType.LeftJoin, user_institution.role_iid == role_action.role_iid,          /* 表 xwtis_sys_user_institution 和 xwtis_sys_role_action 进行Left连接 */
+                                                                                                                             JoinType.LeftJoin, role_action.action_iid == action.iid          /* 表 xwtis_sys_role_action 和 xwtis_sys_action 进行Left连接 */
+                                                                                                                     &#125;)
+            .Select((user_institution, role_action, action) =&gt; new
+                    &#123;
+                        user_id = user_institution.iid,
+                        user_institution.institution_code,
+                        action.actiontype,
+                        action_id = action.aid,
+                        action.paid,
+                        action.path,
+                        action.component,
+                        action.redirect,
+                        action.adescribe,
+                        action.icopath,
+                        action.isvisible,
+                        action.sys_type,
+                        action.edit_type,
+                        action.sortid
+                    &#125;)
+            .Where(a =&gt; a.user_id == mUserId &amp;&amp; a.institution_code == mInstitutionCode
+                   &amp;&amp; a.actiontype == &quot;A&quot; &amp;&amp; a.isvisible == &quot;Y&quot;)
+            .OrderBy(a =&gt; a.sortid).OrderBy(a =&gt; a.sortid).ToList();
+        //获取所有子项
+        foreach (var mMenuItem in mGetAction_User)
+        &#123;
+            RActionUserClass mRActionUserClass = new RActionUserClass();
+            mRActionUserClass.aid = mMenuItem.action_id.ToString();
+            mRActionUserClass.title = mMenuItem.adescribe;
+            switch (mMenuItem.edit_type)
+            &#123;
+                case &quot;1&quot;:
+                    mRActionUserClass.edittype = RActionUserClass.EditType.显示;
+                    break;
+                case &quot;-1&quot;:
+                    mRActionUserClass.edittype = RActionUserClass.EditType.隐藏;
+                    break;
+                case &quot;-2&quot;:
+                    mRActionUserClass.edittype = RActionUserClass.EditType.不可编辑;
+                    break;
+            &#125;
+            mNode_Users.Add(mRActionUserClass);
+            if (mMenuItem.edit_type != &quot;-1&quot; &amp;&amp; mMenuItem.edit_type != &quot;-2&quot;)
+            &#123;//隐藏和不可编辑到没有权限
+                if (!mAidList.Contains(mMenuItem.action_id.ToString()))
+                &#123;
+                    mAidList.Add(mMenuItem.action_id.ToString());
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+
+    RedisHelper redis = new RedisHelper(0);
+    string mActionKey = XWSuperClass.S_XWActionList_QZ + mUserId.ToString();
+    string mAids = &quot;&quot;;
+    foreach (string mAid in mAidList)
+    &#123;
+        mAids += mAid + &quot;,&quot;;
+    &#125;
+    if (!string.IsNullOrEmpty(mAids))
+    &#123;
+        mAids = mAids.Substring(0, mAids.Length - 1);
+    &#125;
+    redis.StringSet(mActionKey, mAids);     //权限记录
+
+    //生成对应树形对象
+    List&lt;RActionClass&gt; mActionClassList = ActionTreeClass.f_CreateMenu_Auto(mNodes);
+
+    RActions mRActions = new RActions();
+    mRActions.institution_code = mInstitutionCode;      //机构编码
+    mRActions.institution_name = mInstitutionName;      //机构名称
+    mRActions.actionmenu = mActionClassList;        //菜单权限
+    mRActions.actionuser = mNode_Users;     //按钮功能权限
+    return AjaxResult.Success(mRActions, &quot;权限获取成功&quot;);
+&#125;
+catch (Exception ex)
+&#123;
+    LogManager.WriteLog(&quot;获取权限异常:&quot; + ex.Message);
+    return AjaxResult.Error(&quot;获取权限异常&quot;, AjaxResult.ErrCode.ServerErr);
+&#125;
+finally
+&#123;
+    context.Dispose();
+&#125;
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zicl1.github.io/2022/06/06/2022-06-06/" data-id="clzjk1e2a0002mcr9g56mfn9q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/" rel="tag">Life</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+    
+    <div id="my-container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+    var gitment = new Gitment({
+      id: '2022年06月06日', // 可选。默认为 location.href, 现在改为页面的标题https://hexo.io/zh-cn/docs/variables.html
+      owner: 'zicl1',
+      repo: 'discuss',
+      oauth: {
+        client_id: '41bf782a65aabaed603c',
+        client_secret: '008c8b70c4aa044a21d8752b9df92799dd327fef',
+      },
+    })
+    gitment.render('my-container')
+    </script>
+    
+    
+<nav id="article-nav">
+  
+    <a href="/2022/06/09/2022-06-09/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          2022年06月09日
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/06/03/2022-06-03/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2022年06月03日</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NET/" rel="tag">.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Download/" rel="tag">Download</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/" rel="tag">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Personal-website/" rel="tag">Personal website</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NET/" style="font-size: 15px;">.NET</a> <a href="/tags/Download/" style="font-size: 15px;">Download</a> <a href="/tags/Life/" style="font-size: 20px;">Life</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Personal-website/" style="font-size: 10px;">Personal website</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">六月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">一月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/06/01/2024-06-01/">2024年06月01日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/25/2024-05-25/">2024年05月25日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/18/2024-05-18/">2024年05月18日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/12/2024-05-12/">2024年05月12日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/02/2024-05-02/">2024年05月02日</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022-2024 Zichen<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/" target="_blank">Github</a> <a href="https://ibruce.info/" target="_blank">不蒜子</a> <br>
+      <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
+      <span id="busuanzi_container_site_uv">本站访客数 <span id="busuanzi_value_site_uv"></span> 人次
+      <br/>
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001" target="_blank">
+        <img width="13px" src="/css/images/gongan.png"/>
+        京公网安备 11000002000001 号
+      </a> &nbsp;
+      <a href="https://beian.miit.gov.cn/" target="_blank"> 京ICP证030173号 </a>
+      </span>
+      <br/>
+      建议您使用Edge、Chrome 80+、FireFox 86+、360极速模式等主流浏览器浏览本网站
+    </div>
+  </div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

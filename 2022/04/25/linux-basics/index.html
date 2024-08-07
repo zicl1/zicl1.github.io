@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Linux basics | Zichen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Linux内核网站：The Linux Kernel Archives Centos下载：Index of &#x2F;centos&#x2F; (163.com)、阿里云开源镜像站资源目录 (aliyun.com) 分区：引导分区1G、交换分区与内存相同、根分区。 文件目录bin：存放常用的指令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux basics">
+<meta property="og:url" content="https://zicl1.github.io/2022/04/25/linux-basics/index.html">
+<meta property="og:site_name" content="Zichen">
+<meta property="og:description" content="Linux内核网站：The Linux Kernel Archives Centos下载：Index of &#x2F;centos&#x2F; (163.com)、阿里云开源镜像站资源目录 (aliyun.com) 分区：引导分区1G、交换分区与内存相同、根分区。 文件目录bin：存放常用的指令">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zicl1.github.io/2022/04/25/linux-basics/image-20220426102234546.png">
+<meta property="og:image" content="https://zicl1.github.io/2022/04/25/linux-basics/image-20220426102500023.png">
+<meta property="og:image" content="https://zicl1.github.io/2022/04/25/linux-basics/image-20220426102557571.png">
+<meta property="og:image" content="https://zicl1.github.io/2022/04/25/linux-basics/image-20220426102611004.png">
+<meta property="og:image" content="https://zicl1.github.io/2022/04/25/linux-basics/image-20220426102721002.png">
+<meta property="og:image" content="https://zicl1.github.io/2022/04/25/linux-basics/image-20220426114007763.png">
+<meta property="og:image" content="https://zicl1.github.io/2022/04/25/linux-basics/image-20220426172225408.png">
+<meta property="og:image" content="https://zicl1.github.io/2022/04/25/linux-basics/Snipaste_2022-05-02_23-29-33.png">
+<meta property="article:published_time" content="2022-04-25T02:47:55.000Z">
+<meta property="article:modified_time" content="2023-09-30T13:34:58.487Z">
+<meta property="article:author" content="Zichen">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zicl1.github.io/2022/04/25/linux-basics/image-20220426102234546.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Zichen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?786cc850f704e5c91f9db88eaa7e7798";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Zichen</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zicl1.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux-basics" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/25/linux-basics/" class="article-date">
+  <time datetime="2022-04-25T02:47:55.000Z" itemprop="datePublished">2022-04-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux basics
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux内核网站：<a target="_blank" rel="noopener" href="https://www.kernel.org/">The Linux Kernel Archives</a></p>
+<p>Centos下载：<a target="_blank" rel="noopener" href="http://mirrors.163.com/centos/">Index of /centos/ (163.com)</a>、<a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/centos/">阿里云开源镜像站资源目录 (aliyun.com)</a></p>
+<p>分区：引导分区1G、交换分区与内存相同、根分区。</p>
+<h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><p>bin：存放常用的指令</p>
+<span id="more"></span>
+
+<p>boot：系统启动时用到的文件</p>
+<p>dev：把硬件映射成文件</p>
+<p>etc：配置文件</p>
+<p>home：存放普通用户的目录</p>
+<p>lib：系统启动所需的动态连接共享库</p>
+<p>lost+found：非法关机后产生的文件</p>
+<p>media：识别的设备如U盘</p>
+<p>mnt：临时挂载别的文件系统</p>
+<p>opt：安装额外软件的存放位置，压缩包</p>
+<p>proc：系统内存映射，获取系统信息</p>
+<p>root：root用户的文件</p>
+<p>sbin：管理员使用的管理命令</p>
+<p>selinux：安全子系统，控制程序访问权限</p>
+<p>srv：服务启动后需要的数据</p>
+<p>sys：linux2.6内核中的文件系统sysfs</p>
+<p>tmp：临时文件</p>
+<p>usr：安装的应用的目录</p>
+<p>usr/local：安装软件的目录，解压后的文件</p>
+<p>var：存放不断扩充的文件，日志文件</p>
+<h2 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h2><p>使用Xshell软件连接服务器，使用Xftp软件上传下载服务器文件。</p>
+<p>Xshell、Xftp：</p>
+<p>新建连接，输入服务器主机ip，连接，接受并保存，输入用户名和密码。</p>
+<h2 id="文本编辑"><a href="#文本编辑" class="headerlink" title="文本编辑"></a>文本编辑</h2><p>vi：文本编辑器</p>
+<p>vim：vi的增强版，代码补全，文字颜色。</p>
+<h3 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h3><p>正常模式</p>
+<p>默认，可以使用删除复制粘贴。</p>
+<p>插入模式(编辑)</p>
+<p>按i,I,o,O,a,A,r,R,其中一个可以进入编辑模式。</p>
+<p>命令行模式(输命令)</p>
+<p>按Esc，再输入冒号:，再输入wq并按回车，表示写入并退出。输入:q表示退出。输入:q!表示不保存并强制退出。</p>
+<p>可以使用读取、存盘、替换、退出、显示行号等。</p>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p>拷贝当前行：yy  拷贝当前行并往下总共3行：3yy  粘贴：p  </p>
+<p>删除当前行：dd  删除当前行并往下总共3行：3dd</p>
+<p>查找：输入正斜杠/，输入查找的内容并按回车，按下按键n查找下一个</p>
+<p>显示行号：输入:set nu并回车  不显示行号：输入:set nonu</p>
+<p>回到顶部首行：按下按键gg  回到尾部末行：按下按键大写的G</p>
+<p>撤销操作：按下按键u</p>
+<p>跳转到指定行：输入行号并按下按键大写的G</p>
+<p>移动光标：hjkl(左下上右)  移动光标次数：输入次数并按下hjkl</p>
+<p>上一页：Ctrl+b  ，下一页：Ctrl+f  ，向上半页：Ctrl+u  ，向下半页：Ctrl+d</p>
+<p>移动光标到非空格的下一列：+  ，移动光标到非空格的上一列：-</p>
+<p>光标向后移动指定次数：输入次数并按下空格</p>
+<p>光标移动到一行的前面：数字0  ，光标移动到一行的后面：$</p>
+<p>光标移动到第一行的开头：H  ，光标移动到屏幕中央那一行的开头：M  ，光标移动到屏幕最下方那一行的开头：L  ，光标移动到最后一行：G</p>
+<p><img src="/2022/04/25/linux-basics/image-20220426102234546.png" alt="image-20220426102234546"></p>
+<p>删除前面的字符：按下按键X  ，删除后面的字符：按下按键x</p>
+<p><img src="/2022/04/25/linux-basics/image-20220426102500023.png" alt="image-20220426102500023"></p>
+<p><img src="/2022/04/25/linux-basics/image-20220426102557571.png" alt="image-20220426102557571"></p>
+<p><img src="/2022/04/25/linux-basics/image-20220426102611004.png" alt="image-20220426102611004"></p>
+<p><img src="/2022/04/25/linux-basics/image-20220426102721002.png" alt="image-20220426102721002"></p>
+<h2 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h2><p>立刻关机：<code>shutodown -h now</code> 或者 <code>halt</code> ，1分钟后关机：<code>shutdown -h 1 &quot;提示信息&quot;</code> ， 重启： <code>shutdown -r now</code> 或者 <code>reboot</code></p>
+<p>把内存的数据同步到磁盘：<code>sync</code></p>
+<h2 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h2><p>切换账号：<code>su - 用户名</code> ，权限高的用户切换权限低用户不需要输入密码 ；注销用户：<code>logout</code>（运行级别3有效）</p>
+<p>添加用户：<code>useradd 用户名</code>，默认该用户的目录在<code>home/用户名</code> ；创建指定目录的用户：<code>useradd -d /home/user/test 用户名</code> </p>
+<p>修改用户的密码：<code>passwd 用户</code> ，显示当前用户所在的目录：<code>pwd</code></p>
+<p>删除用户并删除用户的目录：<code>userdel -r xxx</code> ， 删除用户不删除用户的目录：<code>userdel xxx</code></p>
+<p>查看用户信息：<code>id 用户名</code> ，查看当前登录的用户：<code>who am i</code></p>
+<h2 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h2><p>查看文件的所有者和所在的组：<code>ls -ahl 文件名</code>或者<code>ll 文件名</code>， 修改文件的所有者：<code>chown 用户名 文件名</code> ，修改文件所在的组：<code>chgrp 组名 文件名</code> ， 修改多级目录所在的组：<code>chgrp -R 组名 目录名</code> ，</p>
+<p>创建组<code>groupadd 组名</code> ，删除组<code>groupdel 组名</code> ，添加用户时直接分配指定的组<code>useradd -g 组名 用户名 </code> ，</p>
+<p>修改用户的组<code>usermod -g 组名 用户名</code>  ， 修改用户登录的初始目录：<code>usermod -d 目录名 用户名</code></p>
+<p><img src="/2022/04/25/linux-basics/image-20220426114007763.png" alt="image-20220426114007763"></p>
+<h2 id="实用命令"><a href="#实用命令" class="headerlink" title="实用命令"></a>实用命令</h2><p>根据名称匹配显示目录下的文件：<code>ls -l *sh</code>，查看以sh结尾的文件；</p>
+<p>显示目录的详细信息文件大小用M显示：<code>ls -lh</code> ；</p>
+<p>显示当前的日历信息：<code>cal</code>， </p>
+<p>创建一个空文件：<code>touch 文件名</code> ，</p>
+<p>查看ip：<code>ifconfig</code></p>
+<h2 id="运行级别"><a href="#运行级别" class="headerlink" title="运行级别"></a>运行级别</h2><p>centos7之前运行级别在/etc/inittab文件中，</p>
+<p>0：关机，1：单用户(找回丢失的密码)，2：多用户状态没有网络服务，3：多用户状态有网络服务， 4：系统未使用 保留给用户，5：图形界面，6：系统重启</p>
+<p>切换指定的运行级别：<code>init 运行级别</code> ，查看当前的运行级别：<code>systemctl get-default</code> ， 设置开机默认的运行级别3为多用户：<code>systemctl set-default multi-user.target</code> ，运行级别5图形界面：<code>systemctl set-default graphical.target</code> </p>
+<p>单用户级别找回root密码，</p>
+<h2 id="帮助指令"><a href="#帮助指令" class="headerlink" title="帮助指令"></a>帮助指令</h2><p>man获得帮助信息：<code>man ls</code> ， 查看ls命令的帮助信息；</p>
+<p>help获得shell内置命令的帮助信息：<code>help cd</code> ，查看cd命令的帮助信息；</p>
+<h2 id="文件目录-1"><a href="#文件目录-1" class="headerlink" title="文件目录"></a>文件目录</h2><p>查看当前目录的绝对路径：<code>pwd</code> ，</p>
+<p>显示当前目录所有的文件和目录包括隐藏的：<code>ls -a</code> ，以列表的方式显示信息：<code>ls -l</code> ，可以组合使用<code>ls -la</code> ，</p>
+<p>回到当前用户的家目录：<code>cd ~</code> ，root用户的家目录在/root ，其他用户的家目录在/home/用户名 ；回到上一级目录：<code>cd ..</code> ，</p>
+<p>创建目录：<code>mkdir /目录名</code>，创建多级目录：<code>mkdir -p /目录名/目录名</code> ，  删除空的目录：<code>rmdir /目录名</code> ， 删除非空的目录：<code>rm -rf /目录名</code> ，创建一个空文件：<code>touch 文件名</code> ，</p>
+<p>拷贝文件到指定目录：<code>cp 文件名 指定目录</code> ，递归复制整个文件夹到目标目录：<code>cp -r 目录 目标目录</code> ，递归复制整个文件夹到目标目录并强制覆盖：<code>\cp -r 目录 目标目录</code> ，</p>
+<p>删除文件或目录：<code>rm 文件名</code> ， 递归删除整个文件夹：<code>rm -r 文件夹</code> ， 强制删除不提示：<code>rm -f 文件夹</code> ， </p>
+<p>重命名：<code>mv 旧名字 新名字</code> ，移动文件：<code>mv 文件名 目标目录</code> ，移动目录：<code>mv 目录 目标目录</code> ，</p>
+<p>查看文件的内容：<code>cat 文件名</code> ， 显示行号：<code>cat -n 文件名</code> ；使用管道命令查看：<code>cat 文件名 | more</code> </p>
+<p>管道命令：把结果交给下一个命令处理；使用more查看指定的文件：<code>more 文件名</code> ，more指令查看时的快捷键：空格表示向下翻一页，回车表示向下翻一行，q表示离开more，Ctrl+f表示向下滚动一屏，Ctrl+b表示返回上一屏，=表示输出当前的行号，:f表示输出文件名和当前的行号。</p>
+<p>根据显示需要加载内容：<code>less 文件名</code> ， 适合查看大型文件；less指令的快捷键：空格表示向下翻一页，pagedown向下翻一页，pageup向上翻一页，/字符串 表示向下查找字符串 按n向下查找 按N向上查找，?字符串 表示向上查找字符串 … ，q表示离开less。</p>
+<p>输出内容到控制台：<code>echo 内容</code> ， 输出环境变量的值：<code>echo $PATH,$HOSTNAME</code> ，</p>
+<p>显示文件的前几行，默认10行：<code>head 文件名</code> ， 显示文件的前5行：<code>head -n 5 文件名</code> ， 显示文件末尾的5行：<code>tail -n 5 文件名</code> ，实时追踪文件的所有更新：<code>tail -f 文件名</code> ， </p>
+<p>输出重定向&gt;：<code>echo &quot;abc&quot; &gt; a.txt</code> ， 将原本要输出在控制台的内容输出到a.txt文件中(覆盖a.txt文件)。追加到a.txt文件中：<code>ls -l &gt;&gt; a.txt</code> ，将列表的目录信息内容追加到a.txt文件的末尾(追加到a.txt文件)。如果a.txt文件不存在则会自动创建。</p>
+<p>创建软链接也叫符号链接：<code>ln -s 原文件或目录 软链接名</code> ， 与win系统的快捷方式类似；删除软链接：<code>rm 软链接名</code> ，</p>
+<p>查看已经执行过的历史命令：<code>history</code> ，查看最近10条历史命令：<code>history 10</code> ，执行历史命令对应编号的指令：<code>!编号</code> ，</p>
+<h2 id="时间日期"><a href="#时间日期" class="headerlink" title="时间日期"></a>时间日期</h2><p>显示当前的时间：<code>date</code> ，显示当前年份：<code>date +%Y</code> ， 显示当前月份：<code>date +%m</code> ， 显示当前是哪一天：<code>date %d</code> ，显示年月时分秒：<code>date &quot;+%Y-%m-%d %H:%M:%S&quot;</code> ， </p>
+<p>设置系统当前时间：<code>date -s &quot;2020-01-01 01:01:01&quot; </code> ， 查看当前日历：<code>cal</code> ， 查看2000年的日历：<code>cal 2000</code> ， </p>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><p>根据文件名查找文件：<code>find 查找目录 -name 文件名</code> ， 根据文件归属者查找：<code>find 查找目录 -user 用户名</code> ， 根据文件大小查找大于10M的文件：<code>find 查找目录 -size +10M</code> ；文件大小表示：+10M大于，-10M小于，10M等于；单位：k，M，G。</p>
+<p>快速定位文件位置：首先执行<code>updatedb</code>指令创建locate数据库，然后使用locate指令自动从数据库中查找：<code>locate 文件名</code> ，</p>
+<p>查看某个指令在哪个目录下：<code>which ls</code> ， 查看ls指令在哪个目录。</p>
+<p>查找文件中的字符：<code>grep 字符串 文件名</code> ， 查找匹配后显示行号：<code>grep -n 字符串 文件名</code> ，查找匹配忽略大小写：<code>grep -i 字符串 文件名</code> ， 使用管道符查找：<code>cat 文件名 | grep 字符串</code> 。</p>
+<h2 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h2><p>压缩文件：<code>gzip 文件</code> ， 解压文件：<code>gunzip 文件</code> ，压缩为.gz文件，</p>
+<p>递归压缩文件夹或者文件：<code>zip -r 压缩后的文件名.zip 压缩的文件夹</code> ， 解压文件：<code>unzip -d 解压后的目录 压缩文件名.zip</code> ，</p>
+<p>打包文件：<code>tar -zcvf 打包后文件名.tar.gz 打包的文件1 打包的文件2</code> ，解压文件：<code>tar -zxvf 文件名.tar.gz</code> ， 解压到指定的目录：<code>tar -zxvf 文件名.tar.gz -C 解压后的目录</code> ； -选项：-c表示产生.tar打包文件，-v表示显示详细信息，-f表示指定压缩后的文件名，-z表示打包同时压缩，-x表示解包.tar文件。</p>
+<h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><p><img src="/2022/04/25/linux-basics/image-20220426172225408.png" alt="image-20220426172225408"></p>
+<p>最前面0-9位表示的含义说明：第0位表示文件的类型（-：普通文件，l：链接文件，d：目录，c：字符设备文件如鼠标键盘，b：块设备如硬盘），第1-3位表示所有者的权限（r：读，w：写，x：执行），第4-6位表示所属组的权限，第7-9位表示其他用户的权限。</p>
+<p>(421)rwx：r表示可以读取、查看r文件，可以读取查看r目录内容；w表示可以修改w文件但是不能删除，删除w文件必须要文件所在w目录的权限，可以重命名w目录名字，创建、删除w目录内文件；x表示可以执行x文件，可以进入x目录修改x目录内的文件。</p>
+<p>后面的1或者2表示文件的个数或者目录中文件的个数 ， 第一个root为文件的所有者，第二个root为文件的所在组 ，后面的14表示文件的大小 ， 后面表示最后修改的日期 ， 最后面是文件名。</p>
+<p>u:所有者，g:所有组，o:其他人，a:所有人(u,g,o)</p>
+<p>修改权限：<code>chmod u=rwx,g=rwx,o=rx 文件名或目录名</code> ， 添加权限：<code>chmod o+w 文件名或目录名</code> ， 删除权限：<code>chmod a-x 文件名或目录名</code> ，第二种方式使用数字修改权限：<code>chmod 777 文件名或目录名</code> ， </p>
+<h2 id="所有者"><a href="#所有者" class="headerlink" title="所有者"></a>所有者</h2><p>修改文件的所有者：<code>chown 用户名 文件名或目录名</code> ， 修改文件的所有者和所在组：<code>chown 用户名:组名 文件名或目录名</code> ， 修改多级目录的所有者：<code>chown -R 用户名 目录名</code> ，</p>
+<h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><h3 id="设置静态ip"><a href="#设置静态ip" class="headerlink" title="设置静态ip"></a>设置静态ip</h3><p>修改文件<code>/etc/sysconfig/network-scripts/ifcfg-ens33</code> ， 修改内容：</p>
+<pre><code class="properties">DEVICE=eth0 # 接口名(设备、网卡)
+HWADDR=00:0C:2x:6x:0x:xx #MAC地址
+TYPE=&quot;Ethernet&quot; # 网络类型(通常是Ethernet)
+UUID=098908-8900-sd90-9fds09 #随机id
+#系统启动的时候网路接口是否有效(yes/no)
+ONBOOT=yes
+#IP的配置方法[none|static|abootp|dhcp](引导时不使用协议|静态分配IP|BOOTP协议|DHCP协议)
+BOOTPROTO=static
+#ip地址
+IPADDR=192.168.200.110
+#网关
+GATEWAY=192.168.200.2
+#域名解析器
+DNS1=192.168.200.2
+</code></pre>
+<p>生效：<code>service network restart</code>或者重启<code>reboot</code></p>
+<h3 id="设置主机名"><a href="#设置主机名" class="headerlink" title="设置主机名"></a>设置主机名</h3><p>查看主机名：<code>hostname</code> ， 修改主机名文件：<code>/etc/hostname</code> ，修改好后重启</p>
+<h3 id="主机名映射ip"><a href="#主机名映射ip" class="headerlink" title="主机名映射ip"></a>主机名映射ip</h3><p>修改windows文件<code>C:\Windows\System32\drivers\etc</code> ， 添加<code>192.168.xx.xx 主机名</code> ，访问主机名时会访问对应的IP。</p>
+<p>查看DNS域名解析缓存：<code>ipconfig /displaydns</code></p>
+<p>手动清理DNS缓存：<code>ipconfig /flushdns</code></p>
+<p><img src="/2022/04/25/linux-basics/Snipaste_2022-05-02_23-29-33.png" alt="Snipaste_2022-05-02_23-29-33.png"></p>
+<h2 id="rpm"><a href="#rpm" class="headerlink" title="rpm"></a>rpm</h2><p>查询已安装的rpm列表：<code>rpm -qa</code> ， 管道过滤查询已安装的包名：<code>rpm -qa | grep 包名</code> 。</p>
+<p>名字中属性的含义：i686或i386表示32位系统，x86_64表示64位系统，noarch表示通用。</p>
+<p>查询是否安装了某个软件包：<code>rpm -q 软件包名</code> ， </p>
+<h2 id="1-文件与文件夹操作"><a href="#1-文件与文件夹操作" class="headerlink" title="1. 文件与文件夹操作"></a>1. 文件与文件夹操作</h2><h3 id="1-1-创建文件夹"><a href="#1-1-创建文件夹" class="headerlink" title="1.1 创建文件夹"></a>1.1 创建文件夹</h3><p>mkdir 命令, 必须目标文件夹的父文件夹都存在, 否则执行不成功.</p>
+<pre><code class="shell">mkdir /zichen
+</code></pre>
+<pre><code class="shell">[root@MyCentOs7 /]# mkdir /zichen2/1
+mkdir: cannot create directory ‘/zichen2/1’: No such file or directory
+</code></pre>
+<p>mkdir -p 命令, 强制创建.</p>
+<pre><code class="shell">mkdir -p /zichen2/1
+</code></pre>
+<h3 id="1-2-创建文件"><a href="#1-2-创建文件" class="headerlink" title="1.2 创建文件"></a>1.2 创建文件</h3><p>touch、vi、echo命令用于创建文件.</p>
+<pre><code class="shell">touch /zichen/1.txt
+</code></pre>
+<p>批量创建文件: 第1个数表示起始, 第2个数表示结束, 第3个数表示步长.</p>
+<pre><code class="shell">[root@MyCentOs7 zichen]# touch /zichen/&#123;1..4..1&#125;.mp3
+[root@MyCentOs7 zichen]# ll
+total 0
+-rw-r--r-- 1 root root 0 Aug 31 16:13 1.txt
+-rw-r--r-- 1 root root 0 Aug 31 16:14 2.mp3
+-rw-r--r-- 1 root root 0 Aug 31 16:14 3.mp3
+-rw-r--r-- 1 root root 0 Aug 31 16:14 4.mp3
+</code></pre>
+<p>vi 和 vim 命令打开一个不存在的文件, 就会创建该文件. </p>
+<p>vi 命令, :wq 保存并退出.</p>
+<pre><code class="shell">[root@MyCentOs7 zichen]# vi 3.mp4
+</code></pre>
+<p>echo 命令在屏幕上打印信息, 结合 &gt; 和 &gt;&gt; 就会创建文件.</p>
+<p>echo 命令, &gt;表示覆盖, &gt;&gt; 表示追加.</p>
+<pre><code class="shell">[root@MyCentOs7 zichen]# echo Hello World!
+Hello World!
+[root@MyCentOs7 zichen]# echo Hello World! &gt; 2.txt
+</code></pre>
+<h3 id="1-3-删除文件夹"><a href="#1-3-删除文件夹" class="headerlink" title="1.3 删除文件夹"></a>1.3 删除文件夹</h3><p>rm 命令, 参数 -r 表示递归删除, 参数 -f 表示强制删除不会提示是否删除, 禁止使用: rm -rf /* 表示删除系统所有文件.</p>
+<pre><code class="shell">[root@MyCentOs7 /]# rm -r /zichen2/
+rm: descend into directory ‘/zichen2/’? y
+rm: remove directory ‘/zichen2/1’? y
+rm: remove directory ‘/zichen2/’? y
+</code></pre>
+<h3 id="1-4-删除文件"><a href="#1-4-删除文件" class="headerlink" title="1.4 删除文件"></a>1.4 删除文件</h3><pre><code class="shell">[root@MyCentOs7 /]# rm /zichen/1.txt 
+rm: remove regular empty file ‘/zichen/1.txt’? y
+</code></pre>
+<h3 id="1-5-切换目录"><a href="#1-5-切换目录" class="headerlink" title="1.5 切换目录"></a>1.5 切换目录</h3><p>cd 命令, </p>
+<p>进入当前目录下的 zichen 目录; </p>
+<p>返回上一级目录; </p>
+<p>进入根目录下的 zichen 目录, zichen 目录下的 1 目录;</p>
+<p>返回上一级目录, 再返回上一级目录.</p>
+<pre><code class="shell">[root@MyCentOs7 /]# cd zichen
+[root@MyCentOs7 zichen]# cd ..
+[root@MyCentOs7 /]# cd /zichen/1
+[root@MyCentOs7 1]# cd ../../
+[root@MyCentOs7 /]# 
+</code></pre>
+<h3 id="1-6-复制粘贴文件夹"><a href="#1-6-复制粘贴文件夹" class="headerlink" title="1.6 复制粘贴文件夹"></a>1.6 复制粘贴文件夹</h3><p> cp 命令.</p>
+<pre><code class="shell">[root@MyCentOs7 b]# cp -a /zichen/b /zichen2/
+</code></pre>
+<h3 id="1-7-复制粘贴文件"><a href="#1-7-复制粘贴文件" class="headerlink" title="1.7 复制粘贴文件"></a>1.7 复制粘贴文件</h3><p>cp 命令, 复制根目录下的 zichen 文件夹中的文件 1.txt , 粘贴到根目录下的 zichen2 文件夹中.</p>
+<pre><code class="shell">[root@MyCentOs7 zichen]# cp /zichen/1.txt /zichen2/
+[root@MyCentOs7 zichen]# ll /zichen2
+total 0
+-rw-r--r-- 1 root root 0 Aug 31 16:45 1.txt
+[root@MyCentOs7 zichen]# 
+</code></pre>
+<p>复制文件并重命名文件名, 复制根目录下的 zichen 文件夹中的文件 2.txt , 粘贴到根目录下的 zichen2 文件夹中, 并重命名为 new.txt 文件.</p>
+<pre><code class="shell">[root@MyCentOs7 zichen]# cp /zichen/2.txt /zichen2/new.txt
+[root@MyCentOs7 zichen]# ll /zichen2/
+total 4
+-rw-r--r-- 1 root root  0 Aug 31 16:45 1.txt
+-rw-r--r-- 1 root root 46 Aug 31 17:17 new.txt
+[root@MyCentOs7 zichen]# 
+</code></pre>
+<p>将目录下所有文件复制到其他目录下, 若给出的源文件是一个目录文件，此时将复制该目录下所有的子目录和文件。</p>
+<pre><code class="shell">[root@MyCentOs7 3]# cp -r /zichen/* /zichen2/3/
+</code></pre>
+<h3 id="1-8-查看当前工作目录"><a href="#1-8-查看当前工作目录" class="headerlink" title="1.8 查看当前工作目录"></a>1.8 查看当前工作目录</h3><p>pwd 命令.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zicl1.github.io/2022/04/25/linux-basics/" data-id="clzjk1e4b008tmcr9el49fzqc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+    
+    <div id="my-container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+    var gitment = new Gitment({
+      id: 'Linux basics', // 可选。默认为 location.href, 现在改为页面的标题https://hexo.io/zh-cn/docs/variables.html
+      owner: 'zicl1',
+      repo: 'discuss',
+      oauth: {
+        client_id: '41bf782a65aabaed603c',
+        client_secret: '008c8b70c4aa044a21d8752b9df92799dd327fef',
+      },
+    })
+    gitment.render('my-container')
+    </script>
+    
+    
+<nav id="article-nav">
+  
+    <a href="/2022/05/28/view-computer-temperature/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          View computer temperature
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/21/natsumes-book-of-friends/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">夏目友人帐</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NET/" rel="tag">.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Download/" rel="tag">Download</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/" rel="tag">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Personal-website/" rel="tag">Personal website</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NET/" style="font-size: 15px;">.NET</a> <a href="/tags/Download/" style="font-size: 15px;">Download</a> <a href="/tags/Life/" style="font-size: 20px;">Life</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Personal-website/" style="font-size: 10px;">Personal website</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">六月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">一月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/06/01/2024-06-01/">2024年06月01日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/25/2024-05-25/">2024年05月25日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/18/2024-05-18/">2024年05月18日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/12/2024-05-12/">2024年05月12日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/02/2024-05-02/">2024年05月02日</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022-2024 Zichen<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/" target="_blank">Github</a> <a href="https://ibruce.info/" target="_blank">不蒜子</a> <br>
+      <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
+      <span id="busuanzi_container_site_uv">本站访客数 <span id="busuanzi_value_site_uv"></span> 人次
+      <br/>
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001" target="_blank">
+        <img width="13px" src="/css/images/gongan.png"/>
+        京公网安备 11000002000001 号
+      </a> &nbsp;
+      <a href="https://beian.miit.gov.cn/" target="_blank"> 京ICP证030173号 </a>
+      </span>
+      <br/>
+      建议您使用Edge、Chrome 80+、FireFox 86+、360极速模式等主流浏览器浏览本网站
+    </div>
+  </div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

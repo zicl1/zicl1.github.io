@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>2022年07月11日 | Zichen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PostgreSQL创建一个数据库在D:\ProgramFiles(x86)\PostgreSQL\10\bin目录下打开cmd，输入： create -U 用户 数据库名 如下使用默认用户postgres，创建数据库mydb3，输入口令等待创建成功。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022年07月11日">
+<meta property="og:url" content="https://zicl1.github.io/2022/07/11/2022-07-11/index.html">
+<meta property="og:site_name" content="Zichen">
+<meta property="og:description" content="PostgreSQL创建一个数据库在D:\ProgramFiles(x86)\PostgreSQL\10\bin目录下打开cmd，输入： create -U 用户 数据库名 如下使用默认用户postgres，创建数据库mydb3，输入口令等待创建成功。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zicl1.github.io/2022/07/11/2022-07-11/image-20220711154317071.png">
+<meta property="og:image" content="https://zicl1.github.io/2022/07/11/2022-07-11/image-20220711155933690.png">
+<meta property="og:image" content="https://zicl1.github.io/2022/07/11/2022-07-11/image-20220711160141587.png">
+<meta property="og:image" content="https://zicl1.github.io/2022/07/11/2022-07-11/image-20220711172304845.png">
+<meta property="article:published_time" content="2022-07-11T12:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-30T13:34:58.340Z">
+<meta property="article:author" content="Zichen">
+<meta property="article:tag" content="Life">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zicl1.github.io/2022/07/11/2022-07-11/image-20220711154317071.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Zichen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?786cc850f704e5c91f9db88eaa7e7798";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Zichen</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zicl1.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2022-07-11" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/11/2022-07-11/" class="article-date">
+  <time datetime="2022-07-11T12:00:00.000Z" itemprop="datePublished">2022-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2022年07月11日
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="PostgreSQL"><a href="#PostgreSQL" class="headerlink" title="PostgreSQL"></a>PostgreSQL</h2><h3 id="创建一个数据库"><a href="#创建一个数据库" class="headerlink" title="创建一个数据库"></a>创建一个数据库</h3><p>在<code>D:\ProgramFiles(x86)\PostgreSQL\10\bin</code>目录下打开cmd，输入：</p>
+<p><code>create -U 用户 数据库名</code></p>
+<p>如下使用默认用户postgres，创建数据库mydb3，输入口令等待创建成功。</p>
+<span id="more"></span>
+
+<pre><code class="shell">C:\Users\zichen&gt;createdb -U postgres mydb3
+口令:
+
+C:\Users\zichen&gt;
+</code></pre>
+<p>或者把<code>D:\ProgramFiles(x86)\PostgreSQL\10\bin</code>添加到环境变量Path中，就可以随时随地打开cmd使用createdb命令。</p>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><h4 id="SQL转储"><a href="#SQL转储" class="headerlink" title="SQL转储"></a>SQL转储</h4><ol>
+<li>默认情况下，psql脚本在遇到一个SQL错误后会继续执行。</li>
+<li>可以设置<code>ON_ERROR_STOP</code>变量来运行psql，这将使psql在遇到SQL错误后退出并返回状态3。你将只能得到一个部分恢复的数据库。</li>
+<li>你可以指定让整个恢复作为一个单独的事务运行，可以通过向psql传递<code>-1</code>或<code>--single-transaction</code>命令行选项来指定。</li>
+</ol>
+<h4 id="文件系统级备份"><a href="#文件系统级备份" class="headerlink" title="文件系统级备份"></a>文件系统级备份</h4><ol>
+<li><p>另外一种备份策略是直接复制PostgreSQL用于存储数据库中数据的文件。</p>
+<p>查询数据库对应的文件夹名：<code>select oid, datname from pg_database ;</code></p>
+<p>数据库文件布局：<a target="_blank" rel="noopener" href="https://www.postgresql.org/docs/8.4/storage-file-layout.html">PostgreSQL： 文档： 8.4： 数据库文件布局</a></p>
+</li>
+</ol>
+<p>为了得到一个可用的备份，数据库服务器<em><strong>必须</strong></em>被关闭。在恢复数据之前你也需要关闭服务器。<br>SIGTERM<br>这是<em>智能关闭</em>模式。在接收SIGTERM后， 服务器将不允许新连接，但是会让现有的会话正常结束它们的工作。仅当所有的会话终止后它才关闭。<br>包含在这些文件中的信息只有配合提交日志文件（<code>pg_xact/*</code>）才有用，提交日志文件包含了所有事务的提交状态。一个表文件只有和这些信息一起才有用。当然也不可能只恢复一个表及相关的<code>pg_xact</code>数据，因为这会导致数据库集簇中所有其他表变得无用。因此文件系统备份只适合于完整地备份或恢复整个数据库集簇。</p>
+<ol start="2">
+<li><p>另一种文件系统备份方法是创建一个数据目录的“一致快照”。<br>典型的过程是创建一个包含数据库的卷的“冻结快照”，然后从该快照复制整个数据目录（如上，不能是部分复制）到备份设备，最后释放冻结快照。即使在数据库服务器运行时，这种方式也有效。</p>
+</li>
+<li><p>还有一种选择是使用rsync来执行一次文件系统备份<br>其做法是先在数据库服务器运行时执行rsync，然后关闭数据库服务器足够长时间来做一次<code>rsync --checksum</code> （<code>--checksum</code>是必需的，因为<code>rsync</code>的文件修改 时间粒度只能精确到秒）。这种方法允许在最小停机时间内执行一次文件系统备份。</p>
+</li>
+</ol>
+<h4 id="连续归档"><a href="#连续归档" class="headerlink" title="连续归档"></a>连续归档</h4><p>在任何时间，PostgreSQL在数据集簇目录的<code>pg_wal/</code>子目录下都保持有一个<em>预写式日志</em>（WAL）。<br><code>D:\ProgramFiles(x86)\PostgreSQL\10\data\pg_wal</code>，这个日志存在的目的是为了保证崩溃后的安全：如果系统崩溃，可以“重放”从最后一次检查点以来的日志项来恢复数据库的一致性。</p>
+<p>我们可以把一个文件系统级别的备份和WAL文件的备份结合起来。<br>需要恢复时，我们先恢复文件系统备份，然后从备份的WAL文件中重放来把系统带到一个当前状态。这种方法比之前的方法管理起来要更复杂，但是有其显著的优点：</p>
+<p><a target="_blank" rel="noopener" href="http://www.postgres.cn/docs/10/continuous-archiving.html#BACKUP-ARCHIVING-WAL">25.3. 连续归档和时间点恢复（PITR） (postgres.cn)</a></p>
+<p>建立WAL归档</p>
+<h3 id="cmd命令"><a href="#cmd命令" class="headerlink" title="cmd命令"></a>cmd命令</h3><pre><code class="shell">D:\ProgramFiles(x86)\PostgreSQL\10\bin&gt; pg_dump -U postgres hjy //备份数据库hjy，使用用户postgres登录
+</code></pre>
+<h3 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h3><p><a target="_blank" rel="noopener" href="https://postgresql.tw/">PostgreSQL台湾用户社群</a></p>
+<h2 id="PostgreSQL文档"><a href="#PostgreSQL文档" class="headerlink" title="PostgreSQL文档"></a>PostgreSQL文档</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>PostgreSQL 由伯克莱大学公开其源代码所诞生，它支持了大多数的标准 SQL 语法。</p>
+<p>同时，PostgreSQL 也支持让用户能以自己的方式进行扩充。 比如通过添加：</p>
+<ul>
+<li>数据类型（data types）</li>
+<li>函数（functions）</li>
+<li>操作（operators）</li>
+<li>聚合函数（aggregate functions）</li>
+<li>索引方法（index methods）</li>
+<li>过程语言（procedural languages）</li>
+</ul>
+<p>PostgreSQL 现在是世界上最先进的开源数据库系统。</p>
+<h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><p>PostgreSQL 采用了主从式架构（client/server）。</p>
+<p>如同一般的主从式架构，客户端与伺服端可以是两台不同的主机，而他们透过 TCP/IP 的网路协议沟通。 你应该将这个观念谨记在心，因为某些在客户端可以被访问的文件，在伺服端可能就无法访问（或使用不同的文件名）。</p>
+<p>PostgreSQL 服务器可以管理来自多个客户端的同时连接。 为了达到这样的功能，它会自我复制（fork）成新的执行程序，一对一地处理每一个连线。</p>
+<p>创建数据库：<code>createdb mydb</code></p>
+<h4 id="psql"><a href="#psql" class="headerlink" title="psql"></a>psql</h4><p>连接数据库<code>mydb</code></p>
+<p><img src="/2022/07/11/2022-07-11/image-20220711154317071.png" alt="image-20220711154317071"></p>
+<p>要离开 psql 的话，请输入 ：<code>mydb=&gt; \q</code></p>
+<h4 id="创建表和数据"><a href="#创建表和数据" class="headerlink" title="创建表和数据"></a>创建表和数据</h4><p>一些 PostgreSQL 语法来自于标准 SQL 的延伸。</p>
+<p>PostgreSQL 是不分大小写字母的，包括各类关键词和描述语，除非是使用双引号括起来的文字。 （更精确地说，没有被双引号括起来的识别字，都会转为小写字母进行识别）</p>
+<p>删除表命令：<code>DROP TABLE tablename;</code></p>
+<p>创建两张表</p>
+<p><img src="/2022/07/11/2022-07-11/image-20220711155933690.png" alt="image-20220711155933690"></p>
+<p>使用pgadmin可视化查看两张表</p>
+<p><img src="/2022/07/11/2022-07-11/image-20220711160141587.png" alt="image-20220711160141587"></p>
+<p>插入数据</p>
+<pre><code class="sql">INSERT INTO weather VALUES (&#39;San Francisco&#39;, 46, 50, 0.25, &#39;1994-11-27&#39;);
+</code></pre>
+<p>只要不是简单的数值内容，都必须要以单引号（’）括住。</p>
+<p>插入地理信息类型</p>
+<pre><code class="sql">INSERT INTO cities VALUES (&#39;San Francisco&#39;, &#39;(-194.0, 53.0)&#39;);
+</code></pre>
+<p>地理信息类型（point type）需要有坐标组作为输入。</p>
+<p>到目前为止，语法的使用需要你依照字段宣告的次序摆放，而另一种语法可以允许你明确地指定数据相对应的字段：</p>
+<pre><code class="sql">INSERT INTO weather (city, temp_lo, temp_hi, prcp, date)
+    VALUES (&#39;San Francisco&#39;, 43, 57, 0.0, &#39;1994-11-29&#39;);
+</code></pre>
+<h4 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h4><p>查询指定字段，所有数据</p>
+<pre><code class="sql">SELECT city, temp_lo, temp_hi, prcp, date FROM weather;
+</code></pre>
+<p>结果</p>
+<pre><code class="shell">mydb=# SELECT city, temp_lo, temp_hi, prcp, date FROM weather;
+     city      | temp_lo | temp_hi | prcp |    date
+---------------+---------+---------+------+------------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27
+(1 行记录)
+
+
+mydb=#
+</code></pre>
+<p>查询时回传列表中撰写一些运算表示式，而不只是简单的字段引用。注意，「AS」被用来重命名输出的字段。 （选用）</p>
+<pre><code class="shell">mydb=# SELECT city, (temp_hi+temp_lo)/2 AS temp_avg, date FROM weather;
+     city      | temp_avg |    date
+---------------+----------+------------
+ San Francisco |       48 | 1994-11-27
+(1 行记录)
+
+
+mydb=#
+</code></pre>
+<p>增加查询条件</p>
+<pre><code class="shell">mydb=# SELECT * FROM weather
+mydb-#     WHERE city = &#39;San Francisco&#39; AND prcp &gt; 0.0;
+     city      | temp_lo | temp_hi | prcp |    date
+---------------+---------+---------+------+------------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27
+(1 行记录)
+
+
+mydb=#
+</code></pre>
+<p>排序</p>
+<pre><code class="sql">SELECT * FROM weather
+    ORDER BY city, temp_lo;
+</code></pre>
+<p>去重</p>
+<pre><code class="sql">SELECT DISTINCT city
+    FROM weather;
+</code></pre>
+<h4 id="交叉查询"><a href="#交叉查询" class="headerlink" title="交叉查询"></a>交叉查询</h4><pre><code class="shell">mydb=# SELECT *
+mydb-#     FROM weather, cities
+mydb-#     WHERE city = name;
+     city      | temp_lo | temp_hi | prcp |    date    |     name      | location
+---------------+---------+---------+------+------------+---------------+-----------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27 | San Francisco | (-194,53)
+(1 行记录)
+
+
+mydb=#
+</code></pre>
+<p>交叉查询会忽略数据表 weather 中未能关连的数据。</p>
+<p>交叉查询时输出指定字段</p>
+<pre><code class="shell">mydb=# SELECT city, temp_lo, temp_hi, prcp, date, location
+mydb-#     FROM weather, cities
+mydb-#     WHERE city = name;
+     city      | temp_lo | temp_hi | prcp |    date    | location
+---------------+---------+---------+------+------------+-----------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27 | (-194,53)
+(1 行记录)
+
+
+mydb=#
+</code></pre>
+<p>因为所有的字段都使用不同的名称，所以解译器会自动发现他们所属的资料表为何。 如果在两个数据表之中，存在有相同名称的字段时，你最好明确指出确定的字段：</p>
+<pre><code class="sql">SELECT weather.city, weather.temp_lo, weather.temp_hi,
+       weather.prcp, weather.date, cities.location
+    FROM weather, cities
+    WHERE cities.name = weather.city;
+</code></pre>
+<p>交叉查询也可以写成如下的另一种形式（内部交叉查询）：</p>
+<pre><code class="shell">mydb=# SELECT *
+mydb-#     FROM weather INNER JOIN cities ON (weather.city = cities.name);
+     city      | temp_lo | temp_hi | prcp |    date    |     name      | location
+---------------+---------+---------+------+------------+---------------+-----------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27 | San Francisco | (-194,53)
+(1 行记录)
+
+
+mydb=#
+</code></pre>
+<p>我们要在查询中做的是，扫描资料表 weather，找到有所关连的每一列资料; 没有关连到的资料列，我们要填上「空值」（null）在资料表 cities 相对的字段之中。 这样的查询我们称作「外部交叉查询」（outer join）。 （先前的交叉查询为「内部交叉查询」（inner join））。 这样的查询指令如下所示（左外部交叉查询）：</p>
+<pre><code class="shell">mydb=# SELECT *
+mydb-#     FROM weather LEFT OUTER JOIN cities ON (weather.city = cities.name);
+     city      | temp_lo | temp_hi | prcp |    date    |     name      | location
+---------------+---------+---------+------+------------+---------------+-----------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27 | San Francisco | (-194,53)
+ Hayward       |      37 |      54 |      | 1994-11-29 |               |
+(2 行记录)
+
+
+mydb=#
+</code></pre>
+<p>这个交叉查询，放在左侧的数据表中的资料列，一定会在结果中至少出现一次，而右侧的数据表中，则只有输出有关连到左侧数据表的资料列。 当左侧数据表的数据栏，并没有在右侧数据表中被关连到时，属于右侧数据表的字段就会被填上空值输出。</p>
+<p>「右侧外部交叉查询」（right outer join）：</p>
+<pre><code class="shell">mydb=# SELECT *
+mydb-#     FROM weather right OUTER JOIN cities ON (weather.city = cities.name);
+     city      | temp_lo | temp_hi | prcp |    date    |     name      | location
+---------------+---------+---------+------+------------+---------------+-----------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27 | San Francisco | (-194,53)
+(1 行记录)
+
+
+mydb=#
+</code></pre>
+<p>完全外部交叉查询」（full outer join）：</p>
+<pre><code class="shell">mydb=# SELECT *
+mydb-#     FROM weather FULL OUTER JOIN cities ON (weather.city = cities.name);
+     city      | temp_lo | temp_hi | prcp |    date    |     name      | location
+---------------+---------+---------+------+------------+---------------+-----------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27 | San Francisco | (-194,53)
+ Hayward       |      37 |      54 |      | 1994-11-29 |               |
+(2 行记录)
+
+
+mydb=#
+</code></pre>
+<p>我们也可以对同一个数据表做交叉查询，称作为「自我交叉查询」（self join）。</p>
+<p>假设我们希望找到所有气温范围的天气数据。 所以我们需要让temp_lo及temp_hi两个字段，和其他的temp_lo及temp_high相比较。</p>
+<pre><code class="shell">mydb=# SELECT W1.city, W1.temp_lo AS low, W1.temp_hi AS high,
+mydb-#     W2.city, W2.temp_lo AS low, W2.temp_hi AS high
+mydb-#     FROM weather W1, weather W2
+mydb-#     WHERE W1.temp_lo &lt; W2.temp_lo
+mydb-#     AND W1.temp_hi &gt; W2.temp_hi;
+  city   | low | high |     city      | low | high
+---------+-----+------+---------------+-----+------
+ Hayward |  37 |   54 | San Francisco |  46 |   50
+(1 行记录)
+
+
+mydb=#
+</code></pre>
+<h4 id="汇总查询"><a href="#汇总查询" class="headerlink" title="汇总查询"></a>汇总查询</h4><p> 汇总查询指的是能够把多个数据列的数据经过计算，产生单一结果的功能。举例来说， count、sum、avg（平均值）、max（最大值）、min（最小值）都是汇总查询的函式。</p>
+<pre><code class="shell">mydb=# SELECT max(temp_lo) FROM weather;
+ max
+-----
+  46
+(1 行记录)
+
+
+mydb=#
+</code></pre>
+<p>如果我们想要知道，这个数值是发生在哪一个城市？</p>
+<pre><code class="sql">SELECT city FROM weather WHERE temp_lo = max(temp_lo);   //不可以
+</code></pre>
+<p>报错：<code>aggregate functions are not allowed in WHERE</code>：Where 其中不允许使用聚合函数</p>
+<p>因为 max 不能使用在 WHERE 条件式当中。 （会有这样的限制，是因为 WHERE 条件式目的是要判断有哪些数据列的数据应该被汇总计算，所以很明显地，这件事必须要在汇整计算前发生，这就产生了矛盾。 ）</p>
+<p>可以使用子查询实现：</p>
+<pre><code class="shell">mydb=# SELECT city FROM weather
+mydb-#     WHERE temp_lo = (SELECT max(temp_lo) FROM weather);
+     city
+---------------
+ San Francisco
+(1 行记录)
+
+
+mydb=#
+</code></pre>
+<p>汇总查询和 GROUP BY 一起使用会很方便的。 举例来说，我们可以得到每个城市所观测到的最高气温：</p>
+<pre><code class="shell">mydb=# SELECT city, max(temp_lo)
+mydb-#     FROM weather
+mydb-#     GROUP BY city;
+     city      | max
+---------------+-----
+ Hayward       |  37
+ San Francisco |  46
+(2 行记录)
+
+
+mydb=#
+</code></pre>
+<p>这个查询对每个城市都输出一列的结果。 每一个汇总的结果，将整个数据表，以关连到的城市进行计算。 而我们可以进一步过滤数据内容，使用 HAVING：</p>
+<pre><code class="shell">mydb=# SELECT city, max(temp_lo)
+mydb-#     FROM weather
+mydb-#     GROUP BY city
+mydb-#     HAVING max(temp_lo) &lt; 40;
+  city   | max
+---------+-----
+ Hayward |  37
+(1 行记录)
+
+
+mydb=#
+</code></pre>
+<p>如果限制所有temp_lo的数值必须要小于40 （WHERE temp_lo &lt; 40）的话，也可能得到相同的结果。 最后，如果我们只关心以“S”开头的城市的话，可以这样做：</p>
+<pre><code class="sql">SELECT city, max(temp_lo)
+    FROM weather
+    WHERE city LIKE &#39;S%&#39;            -- (1)
+    GROUP BY city
+    HAVING max(temp_lo) &lt; 40;
+</code></pre>
+<p>了解 SQL 中 WHERE 和 HAVING 之间的行为。 其根本上的差异是：WHERE 会在合并和汇总计算之前进行选择数据的动作（也就是它控制着，哪些数据需要被汇总计算）; 而 HAVING 是在合并及汇整计算之后，才进行过滤数据的动作。</p>
+<p>先前的例子当中，我们可以把城市名称的限制放在 WHERE 条件式之中，因为它不需要汇总。 这将会比放在 HAVING 条件式中更有效率，因为这样可以避免合并及汇整运算整个表格，不用浪费时间在本来就会被过滤掉的数据上。</p>
+<h4 id="更新修改"><a href="#更新修改" class="headerlink" title="更新修改"></a>更新修改</h4><p>你可以使用 UPDATE 指令以列为单位来更新数据。 假设你发现气温的数值测量在11月28日之后都多了2度。</p>
+<pre><code class="shell">mydb=# UPDATE weather
+mydb-#     SET temp_hi = temp_hi - 2,  temp_lo = temp_lo - 2
+mydb-#     WHERE date &gt; &#39;1994-11-28&#39;;
+UPDATE 1
+</code></pre>
+<h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4><pre><code class="sql">DELETE FROM weather WHERE city = &#39;Hayward&#39;;
+</code></pre>
+<p>这个指令有一个应该要特别注意的情况：</p>
+<pre><code class="sql">DELETE FROM tablename;
+</code></pre>
+<p>没有任何限制的条件，DELETE 将会<strong>删去所有该数据表中的数据</strong>，使成为空的数据表。 数据库系统并不会在这个动作执行前和你确认！ </p>
+<h4 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h4><p>假设关连天气信息和城市位置的结果，是你的应用中特别常用的，但你并不想要每次都要输入一长串的查询语句。 那么，你可以为这个查询语句建立一个「查看表（View）」，你可以取一个名字，当你需要使用的时候，你可以把它当作一个数据表来使用：</p>
+<pre><code class="shell">mydb=# CREATE VIEW myview AS
+mydb-#     SELECT city, temp_lo, temp_hi, prcp, date, location
+mydb-#         FROM weather, cities
+mydb-#         WHERE city = name;
+CREATE VIEW
+mydb=#
+mydb=# SELECT * FROM myview;
+     city      | temp_lo | temp_hi | prcp |    date    | location
+---------------+---------+---------+------+------------+-----------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27 | (-194,53)
+(1 行记录)
+</code></pre>
+<p>使用pgAdmin查看视图：</p>
+<p><img src="/2022/07/11/2022-07-11/image-20220711172304845.png" alt="image-20220711172304845"></p>
+<h4 id="外部索引键"><a href="#外部索引键" class="headerlink" title="外部索引键"></a>外部索引键</h4><p>创建两张表</p>
+<pre><code class="sql">CREATE TABLE cities (
+        city     varchar(80) primary key,
+        location point
+);
+
+CREATE TABLE weather (
+        city      varchar(80) references cities(city),
+        temp_lo   int,
+        temp_hi   int,
+        prcp      real,
+        date      date
+);
+</code></pre>
+<p>插入错误的数据，cities中不存在的city名字。</p>
+<pre><code class="sql">INSERT INTO weather VALUES (&#39;Berkeley&#39;, 45, 53, 0.0, &#39;1994-11-28&#39;);
+</code></pre>
+<p>报错：</p>
+<pre><code class="shell">ERROR:  insert or update on table &quot;weather&quot; violates foreign key constraint &quot;weather_city_fkey&quot;
+DETAIL:  Key (city)=(Berkeley) is not present in table &quot;cities&quot;.
+</code></pre>
+<p>错误：在表“weather”上插入或更新违反外键约束“weather_city_fkey”<br>详细信息：键（城市）=（’Berkeley’）不在表“城市”中。</p>
+<p>外部索引键或简称外部键（foreign key）的行为可以让你的应用程序变得容易调整。正确地使用外部索引键，可以改善数据库应用程序的质量。</p>
+<h4 id="事务交易安全"><a href="#事务交易安全" class="headerlink" title="事务交易安全"></a>事务交易安全</h4><p>交易（Transaction），是所有数据库的基础概念。 基本上来说，一个交易指的是，一系列的执行步骤包裹在一起，其结果只有全部成功或全部失败两种情况的操作行为。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.postgresql.tw/tutorial/advanced-features/transactions">3.4. 交易安全 - PostgreSQL 正体中文使用手册</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zicl1.github.io/2022/07/11/2022-07-11/" data-id="clzjk1e2j000bmcr9cmo8efop" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/" rel="tag">Life</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+    
+    <div id="my-container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+    var gitment = new Gitment({
+      id: '2022年07月11日', // 可选。默认为 location.href, 现在改为页面的标题https://hexo.io/zh-cn/docs/variables.html
+      owner: 'zicl1',
+      repo: 'discuss',
+      oauth: {
+        client_id: '41bf782a65aabaed603c',
+        client_secret: '008c8b70c4aa044a21d8752b9df92799dd327fef',
+      },
+    })
+    gitment.render('my-container')
+    </script>
+    
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/12/2022-07-12/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          2022年07月12日
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/08/2022-07-08/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2022年07月08日</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NET/" rel="tag">.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Download/" rel="tag">Download</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/" rel="tag">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/" rel="tag">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Personal-website/" rel="tag">Personal website</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NET/" style="font-size: 15px;">.NET</a> <a href="/tags/Download/" style="font-size: 15px;">Download</a> <a href="/tags/Life/" style="font-size: 20px;">Life</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Personal-website/" style="font-size: 10px;">Personal website</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">六月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">二月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">一月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/06/01/2024-06-01/">2024年06月01日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/25/2024-05-25/">2024年05月25日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/18/2024-05-18/">2024年05月18日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/12/2024-05-12/">2024年05月12日</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/02/2024-05-02/">2024年05月02日</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022-2024 Zichen<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/" target="_blank">Github</a> <a href="https://ibruce.info/" target="_blank">不蒜子</a> <br>
+      <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
+      <span id="busuanzi_container_site_uv">本站访客数 <span id="busuanzi_value_site_uv"></span> 人次
+      <br/>
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001" target="_blank">
+        <img width="13px" src="/css/images/gongan.png"/>
+        京公网安备 11000002000001 号
+      </a> &nbsp;
+      <a href="https://beian.miit.gov.cn/" target="_blank"> 京ICP证030173号 </a>
+      </span>
+      <br/>
+      建议您使用Edge、Chrome 80+、FireFox 86+、360极速模式等主流浏览器浏览本网站
+    </div>
+  </div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
